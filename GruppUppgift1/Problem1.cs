@@ -1,7 +1,7 @@
-public class ProblemOne
+public class Problem1
 {
-    public static int[] MinAndMax(int[] ints)
+    public static void Run()
     {
-        return [ints.Min(), ints.Max()];
+        Console.WriteLine("Problem");
     }
 }

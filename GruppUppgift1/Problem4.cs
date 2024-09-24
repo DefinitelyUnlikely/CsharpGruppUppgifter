@@ -3,7 +3,7 @@ class Problem4()
     public static void Run()
     {
         Console.Write("Skriv in en sträng: ");
-        char[] text = Console.ReadLine().ToCharArray();
+        char[] text = Console.ReadLine()!.ToCharArray();
         char[] reversedText = new char[text.Length];
         int count = 0;
 

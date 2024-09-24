@@ -4,8 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Välj problem: ");
-        int problem = Int32.Parse(Console.ReadLine());
+        Console.Write("Välj problem(1-5): ");
+        Int32.TryParse(Console.ReadLine(), out int problem);
         switch (problem)
         {
             case 1:

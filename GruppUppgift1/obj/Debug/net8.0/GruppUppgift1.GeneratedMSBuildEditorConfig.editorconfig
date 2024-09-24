@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GruppUppgift1
-build_property.ProjectDir = C:\Code\GruppUppgifter\CsharpGruppUppgifter\GruppUppgift1\
+build_property.ProjectDir = C:\Code\TK Grupp Projekt\C# Uppift 1\CsharpGruppUppgifter\GruppUppgift1\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

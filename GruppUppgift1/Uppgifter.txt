@@ -4,11 +4,11 @@ Lös följande fem övningar. Det behöver inte finnas någon felhantering eller
 
 Skriv en funktion som tar in en array med nummer. Funktionen skall returnera det största numret och det minsta numret i arrayen.
 
-## 2.
+## 2. Liam
 
 Hämta in en sträng från terminalen. Skriv ut det sista ordet i strängen (ord definieras är som text som separeras av mellanslag).
 
-## 3.
+## 3. Josif
 
 Skriv ett program som printar ut innehållet för filer. Man skall kunna skriva in ett filnamn i programmet (genom terminalen) och programmet tar sedan filen och skriver ut innehållet till konsolen.
 

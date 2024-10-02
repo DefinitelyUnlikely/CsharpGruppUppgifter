@@ -73,7 +73,7 @@ class Problem3
 
 // programmet frågar efter ett filnamn.
 // skriv in filens namn som du vill läsa
-    // gruppuppgift3.txt + Enter 
+    // uppgift3.txt + Enter 
 
 // om filen finns, kommer innehållet att skrivas ut på konsolen. 
 // Om filen inte finns, så kommer programmet visa ett felmeddelande 
@@ -83,16 +83,16 @@ class Problem3
             Console.WriteLine($"Filen '{fileName}' hittades inte.");
         }*/
 
-// testa programmet genom att skapa en ny textfil i samma mapp som gruppuppgift3.csproj -fil, 
+// testa programmet genom att skapa en ny textfil i samma mapp som GruppUppgift1.csproj -fil, 
 
 // i VS Code-terminalen, skriv:
-    // echo "Detta är innehållet i testfilen gruppuppgift3." > uppgift3.txt + Enter
+    // echo "Detta är innehållet i testfilen uppgift3." > uppgift3.txt + Enter
 
 // nu skapas en fil som heter uppgift3.txt med lite text i: 
-    // "Detta är innehållet i testfilen gruppuppgift3." 
+    // "Detta är innehållet i testfilen uppgift3." 
 
 // kör programmet igen i VS Code-terminalen: 
     // dotnet run + Enter 
 
 // när programmet frågar om ett filnamn, skriv in filens namn som du vill läsa: 
-    // gruppuppgift3.txt + Enter 
+    // uppgift3.txt + Enter 

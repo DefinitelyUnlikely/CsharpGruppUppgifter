@@ -1,7 +1,14 @@
-class Problem2
+class Program
 {
-    public static void Run()
+    static void Main()
     {
-        Console.WriteLine("Problem");
+        Console.WriteLine("skriv en mening:");
+        string input = Console.ReadLine();
+        
+        string[] words = input.Split(' ');
+
+        string lastWord = words[words.Length - 1];
+
+        Console.WriteLine("Sista ordet i meningen är: " + lastWord);
     }
 }

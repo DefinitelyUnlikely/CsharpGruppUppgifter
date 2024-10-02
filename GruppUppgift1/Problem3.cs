@@ -3,7 +3,7 @@
 // Man skall kunna skriva in ett filnamn i programmet (genom terminalen) 
 // och programmet tar sedan filen och skriver ut innehållet till konsolen. 
 
-//Funktionaliteten i detta program för System och System.IO:
+// Funktionaliteten i detta program för System och System.IO:
 // System används för att hantera in- och utdata från konsolen, 
 // vilket gör att användaren kan interagera med programmet genom att mata in text och se resultat.
 using System;

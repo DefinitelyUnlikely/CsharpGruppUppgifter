@@ -13,7 +13,7 @@ using System;
 // Det ser till att data (namnlistan) kan persisteras och laddas upp igen nästa gång programmet körs.
 using System.IO;
 
-// En Class unikt skapad för att hantera Uppgift/Problem 3m, i Gruppuppgift 1. 
+// En Class unikt skapad för att hantera Uppgift/Problem 3, i Gruppuppgift 1. 
 class Problem3
 {
     // Deklarerad metod som kör programmet, och som anropas från Program.cs filen. 

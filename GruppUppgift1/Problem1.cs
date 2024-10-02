@@ -1,6 +1,4 @@
-using System.Diagnostics.Metrics;
-using System.Globalization;
-using System.Net;
+namespace GruppUppgift1;
 
 public class Problem1
 {

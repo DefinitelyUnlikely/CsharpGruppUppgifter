@@ -1,9 +1,7 @@
-﻿namespace GruppUppgift2;
-
-class Program
+﻿class Program
 {
     static void Main(string[] args)
     {
-        GameController.Start();
+        GameController.Run();
     }
 }

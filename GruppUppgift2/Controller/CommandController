@@ -1,0 +1,30 @@
+public class CommandManager
+{
+    public static void TryExecuteCommand(string input)
+    {
+        if (input.Length == 0)
+        {
+            throw new ArgumentException("Command is empty.");
+        }
+
+        string[] commandArgs = input.Split(" ");
+        string command = commandArgs[0];
+
+        switch (command)
+        {
+            case "create":
+                CreateTaskCommand.Execute(commandArgs);
+                break;
+            case "remove":
+                RemoveTaskCommand.Execute(commandArgs);
+                break;
+            case "help":
+                HelpCommand.Execute(commandArgs);
+                break;
+
+            case "exit":
+                ExitCommand.Execute(commandArgs);
+                break;
+        }
+    }
+}

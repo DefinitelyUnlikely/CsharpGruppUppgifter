@@ -2,8 +2,14 @@ public class GameController
 {
     public static bool running = true;
 
-    public static void Start()
+    public static void Run()
     {
+        RoomController.CreateRooms();
+        foreach (Room room in RoomController.rooms)
+        {
+            Console.WriteLine(room.Name);
+        }
+
         while (running)
         {
             Console.Write("Enter input: ");

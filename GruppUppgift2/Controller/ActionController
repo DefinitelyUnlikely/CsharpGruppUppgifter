@@ -1,0 +1,14 @@
+// Några idéer om en återanvändbar action controller för specifik userinput till pussel.
+
+public class actioncontroller
+{
+  //Overloading för olika typer av input.
+  public bool GetResult(int userInput, int correctInput){
+    if(userInput != correctInput){ return false;}
+    return true;
+  }
+  public bool GetResult(string userInput, string correctInput){
+    if(userInput != correctInput){ return false;}
+    return true;
+  }
+}

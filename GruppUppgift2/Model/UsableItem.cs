@@ -1,1 +1,1 @@
-public class UseableItem : GameObject { }
+public class UsableItem : GameObject { }

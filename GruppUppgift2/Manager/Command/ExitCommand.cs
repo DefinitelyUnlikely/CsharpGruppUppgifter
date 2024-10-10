@@ -2,6 +2,6 @@ public class ExitCommand
 {
     public static void Execute()
     {
-        GameController.running = false;
+        GameManager.running = false;
     }
 }

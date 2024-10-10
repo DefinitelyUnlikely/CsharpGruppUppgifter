@@ -20,6 +20,11 @@ public class HelpCommand
                     Console.WriteLine("Exit terminates the program.");
                     break;
                 }
+                case "open":
+                {
+                    Console.WriteLine("Opens doors, locks or other closed objects.");
+                    break;
+                }
                 default:
                 {
                     Console.WriteLine("Available Commands: help, exit.");

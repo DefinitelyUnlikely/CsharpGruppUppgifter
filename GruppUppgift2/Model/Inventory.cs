@@ -10,7 +10,7 @@ public class Inventory
     public void AddItem(UsableItem item)
     {
         items.Add(item);
-        Console.WriteLine($"{item.} has been added to your inventory.");
+        Console.WriteLine($"{item.Name} has been added to your inventory.");
     }
 
     public void RemoveItem(UsableItem item)
@@ -40,7 +40,7 @@ public class Inventory
         else
         {
             Console.WriteLine("Your inventory contains:");
-            foreach (var item in UsableItem)
+            foreach (var item in items)
             {
                 Console.WriteLine($"- {item}");
             }

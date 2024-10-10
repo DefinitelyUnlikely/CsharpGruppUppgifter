@@ -1,11 +1,17 @@
-public class Room : Object
+public class Room : GameObject
 {
-    public int[] ConnectsToRoom { get; set; }
+    public List<GameObject> Items { get; set; }
+    public Story story;
 
-    public Room(string name, string description, int[] connectsToRoom)
+    public Room(string name, string description, List<GameObject> items, Story story)
+    //: base(name, description)
     {
-        Name = name;
-        Description = description;
-        ConnectsToRoom = connectsToRoom;
+        Items = items;
+        this.story = story;
+    }
+
+    public void PrintStory()
+    {
+        Console.WriteLine(story.GetStoryDescription());
     }
 }

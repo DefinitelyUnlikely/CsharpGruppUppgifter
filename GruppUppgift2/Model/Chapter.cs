@@ -3,8 +3,7 @@ public class Chapter : GameObject
     private List<GameObject> chapterItems = [];
 
     public Chapter(string name, string description)
-    //: base(name, description)
-    { }
+        : base(name, description) { }
 
     public void AddChapterItem(GameObject chapterItem)
     {

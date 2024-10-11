@@ -8,7 +8,7 @@ public class RoomManager
     // Called at game initialization to create all rooms.
     public static void CreateRooms()
     {
-        rooms.Add(new HubRoom().CreateRoom());
+        //rooms.Add(new HubRoom().CreateRoom());
         rooms.Add(new ExampleRoom().CreateRoom());
     }
 

@@ -9,25 +9,23 @@ public class ExampleRoom
         @"You find yourself in an old, abandoned laboratory. The room is dimly lit, with flickering 
 fluorescent lights casting eerie shadows. The air is thick with dust, and the faint smell of chemicals lingers.";
 
-    /*
-        // List of all the items at the start of a room.
-        List<GameObject> items =
-            new()
-            {
-                new GameObject("door", "A heavy reinforced steel door with a digital <keypad>"),
-                new UsableItem(
-                    "screwdriver",
-                    "A regular screwdriver. Maybe you can open something with it.",
-                    "grate"
-                ),
-                new GameObject(
-                    "workbench",
-                    @"On the workbench, there are various tools and a partially disassembled robot. Among the tools, you find
+    // List of all the items at the start of a room.
+    List<GameObject> items =
+        new()
+        {
+            new GameObject("door", "A heavy reinforced steel door with a digital <keypad>"),
+            new UsableItem(
+                "screwdriver",
+                "A regular screwdriver. Maybe you can open something with it.",
+                "grate"
+            ),
+            new GameObject(
+                "workbench",
+                @"On the workbench, there are various tools and a partially disassembled robot. Among the tools, you find
     a <screwdriver> and a pair of <pliers>."
-                ),
-            };
-    */
-    List<GameObject> items;
+            ),
+        };
+
     List<Chapter> chapters =
         new()
         {
@@ -47,7 +45,7 @@ the periodic table."
     {
         // Story is a class containing all Chapters and keeps track of where in the story you are.
         Story story = new Story(chapters);
-        Room room = new(name, description, items, story);
+        Room room = new(name, description, story, items);
         return room;
     }
 }

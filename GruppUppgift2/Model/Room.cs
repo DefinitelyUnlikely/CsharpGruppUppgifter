@@ -1,22 +1,34 @@
-namespace GruppUppgift2.Model;
-
 public class Room : GameObject
 {
-
     public string[] ConnectsToRoom { get; }
     public List<GameObject> Items { get; }
+
     // Tillagt av Olof, så det är kopplat till story.
     public Story story;
 
-    public Room(string name, string description, string[] connectsToRoom, Story story, List<GameObject>? items = null)
-    : base(name, description)
+    public Room(
+        string name,
+        string description,
+        string[] connectsToRoom,
+        Story story,
+        List<GameObject>? items = null
+    )
+        : base(name, description)
     {
         ConnectsToRoom = connectsToRoom;
         Items = items ?? [];
         this.story = story;
     }
 
-    // Vi vill kunna uppdatera vårt rums description om något i rummet ändras. 
+    public Room(string name, string description, Story story, List<GameObject>? items = null)
+        : base(name, description)
+    {
+        Items = items ?? [];
+        this.story = story;
+        ConnectsToRoom = [];
+    }
+
+    // Vi vill kunna uppdatera vårt rums description om något i rummet ändras.
     // En metod som antagligen ska kallas på av StoryManager eller GameManager.
     // Eller så sköts det helt av story, med kapitel eller dylikt. Vi får se.
     public void UpdateDescription(string newDescription)
@@ -31,10 +43,9 @@ public class Room : GameObject
     }
 
     // Tillagt av Olof, så det är kopplat till story.
-    // Tyder på att vi inte kommer behöva StartRoom. 
+    // Tyder på att vi inte kommer behöva StartRoom.
     public void PrintStory()
     {
         Console.WriteLine(story.GetStoryDescription());
     }
-
 }

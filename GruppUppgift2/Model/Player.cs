@@ -1,5 +1,3 @@
-namespace GruppUppgift2.Model;
-
 public class Player
 {
     string Name { get; set; }
@@ -8,5 +6,4 @@ public class Player
 
     // Om vi tänkte identifiera rum med namn, tänker jag att vi kör str istället för int.
     string currentRoom = "";
-
 }

@@ -4,7 +4,7 @@
 public class UsableItem : GameObject
 {
     private readonly string? UseDescription;
-    private List<GameObject> UsableWith;
+    protected List<GameObject> UsableWith { get; }
 
     public UsableItem(string name, string description, string? useDescription = null, List<GameObject>? useWith = null)
     : base(name, description)

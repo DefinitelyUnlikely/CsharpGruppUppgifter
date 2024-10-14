@@ -1,15 +1,9 @@
 // Detta är föremål som skall kunna interageras med på ett sätt som är mer betydelsefullt än
-// enbart skriva ut en beskriving vid inspektion. Då en del av OOP handlar om att låta objekt
-// ta hand om sig självt tänker jag att anmtagligen sköts saker som att ta oss vidare i storyn
-// etc. vid använding av rätt föremål inte av denna klassen.
+// enbart skriva ut en beskriving vid inspektion. Objekt ska ta hand om sig själva, så mycket kring 
+// denna klass tas mycket möjligt hand om av andra klasser.
 public class UsableItem : GameObject
 {
-    // kör denna som readonly till att börja med - jag tänker att om UseDescription behöver uppdateras
-    // att det egentligen bör vara ett helt nytt objekt.
     private readonly string? UseDescription;
-
-    // skall föremål som är användbara gå att använda med flera olika
-    // föremål? Jag gör en lista ifall att vi tänker det.
     private List<GameObject> UsableWith;
 
     // En dictionary där vi skickar in ett objekt som nyckel (kanske bör ändras till namn) och en string
@@ -28,20 +22,21 @@ public class UsableItem : GameObject
     {
         UseDescription = useDescription;
         // ?? är en short hand för if (useWith == null) { UsableWith = []; } else { UsableWith = useWith; }
-        // Så om man inte anger någon lista eller dict för att den inte behövs, sätts den till att vara tom.
         // Gör så att vi slipper kolla för null i UseItemWith.
         UsableWith = useWith ?? [];
         UsableWithDescriptions = usableWithDescriptions ?? [];
     }
 
-    public void UseItem()
+    // Ska annan funktionallitet skötas av Story eller Menu? Annars hade vi kunant göra så
+    // att denna tar emot en delegate - Då skapar vi en funktion som vi kan skicka med i objektet när 
+    // man skapar det. Eller borde vi egentligen göra så att vi ärver från denna för varje enskilt föremål?
+    public virtual void UseItem()
     {
         Console.WriteLine(UseDescription);
     }
 
-    // En tanke man kan ha kring denna är att vi använder delegates och då skippar en dictionary.
-    // i.e. Vi kan skicka in en metod som argument, för att på det sättet
-    // bestämma ev. kod vid behov.
+    // Kanse ska vi köra namn istället för objektet här, så man inte behöver hålla koll på 
+    // antingen index eller variablar som referear till dem.
     public virtual void UseItemWith(GameObject item)
     {
         if (!UsableWith.Contains(item))

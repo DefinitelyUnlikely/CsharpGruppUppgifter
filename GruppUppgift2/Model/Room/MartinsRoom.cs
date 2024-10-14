@@ -1,12 +1,7 @@
 public class MartinsRoom
 {
     string name = "The Library";
-    // Detta kanske också skall vara kapitel 1 i storyn?
-    string description =
-    @"A dusty old Library. Mold covers the ceiling and even thought you cannot find a light source, the room is brigtly lit. 
-    Along one of the walls is a <bookcase>, filled to the brim with books. In a corner you see an old <chair> that looks to be falling apart. 
-    Right infront of you is a door, with two <padlocks>. Both take a 4 number combination. Above it is an old <clock>. 
-    The large hand is stuck on 12 and the small hand on 4. You can't help but think 'AM or PM', as if that matters.";
+    string description = "An old study, looking very much like any other library, albeit older and dustier.";
 
     List<GameObject> items = new()
     {
@@ -17,8 +12,29 @@ public class MartinsRoom
         new CombinationPadlock("Library Padlock #1", "A padlock that takes a 4 number combination.", "0412"),
         new CombinationPadlock("Library Padlock #2", "A second padlock that takes a 4 number combination.", "1006"),
         new LibraryBook("The book 1984", "As you pick up the book, you notice it is lighter than it probably should be. You open it up, revealing a hidden key."),
-        new HiddenLibraryKey("A hidden key", "A small key that was hidden inside a book."),
     };
+
+    List<Chapter> chapters = new()
+    {
+        new Chapter("introduction", @"A dusty old Library. Mold covers the ceiling and even thought you cannot find a light source, the room is brigtly lit. 
+            Along one of the walls is a <bookcase>, filled to the brim with books. In a corner you see an old <chair> that looks to be falling apart. 
+            Right infront of you is a door, with two <padlocks>. Both take a 4 number combination. Above it is an old <clock>. 
+            The large hand is stuck on 12 and the small hand on 4. You can't help but think 'AM or PM', as if that matters."),
+
+        new Chapter("The clock is turned", @"A dusty old Library. Mold covers the ceiling and even thought you cannot find a light source, the room is brigtly lit. 
+            Along one of the walls is a <bookcase>, filled to the brim with books. In a corner you see an old <chair> that looks to be falling apart. 
+            Right infront of you is a door, with two <padlocks>. Both take a 4 number combination. Above it is an old <clock>. 
+            The large hand is now stuck on 6 and the small hand on 10."),
+        new Chapter("The padlocks are opened", "The padlocks have been opened, inviting you to open the <door> in front of you.")
+    };
+
+    public Room createRoom()
+    {
+        items.Add(new HiddenLibraryKey("A hidden key", "A small key that was hidden inside a book.", "You need to use this with something.", [items[2]]));
+        Story story = new Story(chapters);
+
+        return new Room(name, description, ["The Hub"], story, items);
+    }
 
 
 }

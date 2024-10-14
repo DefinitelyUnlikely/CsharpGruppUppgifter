@@ -13,7 +13,7 @@ public class Room : GameObject
         Story story,
         List<GameObject>? items = null
     )
-        : base(name, description)
+    : base(name, description)
     {
         ConnectsToRoom = connectsToRoom;
         Items = items ?? [];
@@ -21,7 +21,7 @@ public class Room : GameObject
     }
 
     public Room(string name, string description, Story story, List<GameObject>? items = null)
-        : base(name, description)
+    : base(name, description)
     {
         Items = items ?? [];
         this.story = story;
@@ -36,14 +36,14 @@ public class Room : GameObject
         Description = newDescription;
     }
 
-    // Vet inte hur man tänker sig interagera med Room objekt, så jag lägger till denna tills vidare.
+
     public virtual void StartRoom()
     {
         Console.WriteLine("This is just the base class for the Room Object, ");
     }
 
     // Tillagt av Olof, så det är kopplat till story.
-    // Tyder på att vi inte kommer behöva StartRoom.
+    // Tyder på att vi inte kommer behöva StartRoom eller UpdateDescription.
     public void PrintStory()
     {
         Console.WriteLine(story.GetStoryDescription());

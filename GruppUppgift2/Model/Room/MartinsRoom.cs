@@ -1,4 +1,7 @@
-public class MartinsRoom
+// Detta har nu utvecklats till en klass som egentligen bara håller information som behövs för att skapa mina rum.
+// Det gör det lite smidigare att skapa Room objekt sedan.
+
+public class MartinsRooms
 {
     string name = "The Library";
     string description = "An old study, looking very much like any other library, albeit older and dustier.";
@@ -33,8 +36,7 @@ public class MartinsRoom
         items.Add(new HiddenLibraryKey("A hidden key", "A small key that was hidden inside a book.", "You need to use this with something.", [items[2]]));
         Story story = new Story(chapters);
 
-        return new Room(name, description, ["The Hub"], story, items);
+        return new TheLibrary(name, description, ["The Hub"], story, items);
     }
-
 
 }

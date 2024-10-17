@@ -8,13 +8,13 @@ public class LibraryBook : UsableItem
     public override void UseItem()
     {
         base.UseItem();
-        // Lägg till nyckeln i rummet.
+        // Lägg till nyckeln i rummet. Behöver också lägga till att den används med klockan.
         HiddenLibraryKey key = new
         (
             "A hidden key",
             "A small key that was hidden inside a book.",
             "You need to use this with something.",
-            [items[2]]
+            []
         );
         RoomManager.currentRoom.Items.Add(key);
 

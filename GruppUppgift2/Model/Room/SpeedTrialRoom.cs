@@ -15,13 +15,13 @@ public class SpeedTrial : Room
     //     }
     // }
 
-    public override async void StartRoom()
+    public override void StartRoom()
     {
         Console.WriteLine("Enter!");
         Task timerTask = Task.Run(async () =>
         {
             await Task.Delay(5000);
-            if ("not player has key")
+            if (true)  // Placeholder. Kolla om spelaren fått nyckeln genom att trycka på enter. Då skriver vi inte detta.
             {
                 Console.WriteLine("Too slow!");
             }
@@ -30,7 +30,7 @@ public class SpeedTrial : Room
             // och flyttar player.
         });
 
-        if (Console.ReadLine().Equals(""))
+        if (Console.ReadLine()!.Equals(""))
         {
             // Ge spelaren nyckeln för detta pusslet.
         }

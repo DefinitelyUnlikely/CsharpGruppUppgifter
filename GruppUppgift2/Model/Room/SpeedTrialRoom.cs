@@ -41,3 +41,22 @@ public class SpeedTrial : Room
         }
     }
 }
+
+// Används för att kunna skapa rummet till vår RoomManager. 
+public class SpeedTrialRoom
+{
+    public string name = "Speed Trial";
+    public string description = "...";
+
+    List<Chapter> chapters = new()
+    {
+        new Chapter("...", "..."),
+    };
+
+    public Room CreateRoom()
+    {
+        Story story = new Story(chapters);
+        return new SpeedTrial(name, description, ["The Hub"], story);
+    }
+
+}

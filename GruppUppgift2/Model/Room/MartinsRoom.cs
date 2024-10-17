@@ -1,10 +1,10 @@
 // Detta har nu utvecklats till en klass som egentligen bara håller information som behövs för att skapa mina rum.
 // Det gör det lite smidigare att skapa Room objekt sedan.
 
-public class MartinsRooms
+public class MartinsRoom
 {
-    string name = "The Library";
-    string description = "An old study, looking very much like any other library, albeit older and dustier.";
+    public string name = "The Library";
+    public string description = "An old study, looking very much like any other library, albeit older and dustier.";
 
 
 
@@ -34,7 +34,9 @@ public class MartinsRooms
         new Chapter("The padlocks are opened", "The padlocks have been opened, inviting you to open the <door> in front of you.")
     };
 
-    public Room createRoom()
+
+
+    public Room CreateRoom()
     {
         Story story = new Story(chapters);
         return new TheLibrary(name, description, ["The Hub"], story, items);

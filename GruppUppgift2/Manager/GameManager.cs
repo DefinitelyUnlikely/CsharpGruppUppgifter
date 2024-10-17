@@ -6,7 +6,7 @@ public class GameManager
     {
 
         RoomManager.CreateRooms();
-        RoomManager.EnterRoom(0);
+        RoomManager.EnterRoom("The Library");   // I framtiden, the hub.
 
         Player player = new Player();
 

@@ -9,6 +9,6 @@ public class BrokenClock : UsableItem
     public override void UseItem()
     {
         base.UseItem();
-        MartinsRoom.story.NextChapter();
+        story.NextChapter();
     }
 }

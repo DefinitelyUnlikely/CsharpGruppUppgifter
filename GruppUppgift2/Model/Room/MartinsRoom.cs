@@ -6,6 +6,9 @@ public class MartinsRooms
     string name = "The Library";
     string description = "An old study, looking very much like any other library, albeit older and dustier.";
 
+
+
+    // Detta är föremålen som finns när rummet skapas. Vi lägger till nyckeln till klockan efter man gör useItem på LibraryBook.
     List<GameObject> items = new()
     {
         new GameObject("Old Chair", "An old chair. As you inspect it closer, you can tell it is marked with the inscription 'Made in 1802'"),
@@ -33,9 +36,7 @@ public class MartinsRooms
 
     public Room createRoom()
     {
-        items.Add(new HiddenLibraryKey("A hidden key", "A small key that was hidden inside a book.", "You need to use this with something.", [items[2]]));
         Story story = new Story(chapters);
-
         return new TheLibrary(name, description, ["The Hub"], story, items);
     }
 

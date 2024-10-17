@@ -5,4 +5,39 @@ public class SpeedTrial : Room
     {
 
     }
+
+    // public async Task TimerTask()
+    // {
+    //     await Task.Delay(5000);
+    //     if ("not player has key")
+    //     {
+    //         Console.WriteLine("Too slow!");
+    //     }
+    // }
+
+    public override async void StartRoom()
+    {
+        Console.WriteLine("Enter!");
+        Task timerTask = Task.Run(async () =>
+        {
+            await Task.Delay(5000);
+            if ("not player has key")
+            {
+                Console.WriteLine("Too slow!");
+            }
+            // Logik för att sparka ut spelaren ur rummet
+            // Jag tänker att detta skall skötas via att man agerar med player 
+            // och flyttar player.
+        });
+
+        if (Console.ReadLine().Equals(""))
+        {
+            // Ge spelaren nyckeln för detta pusslet.
+        }
+        else
+        {
+            Console.WriteLine("I said ENTER!");
+            // Vänta på att bli utsparkad.
+        }
+    }
 }

@@ -28,15 +28,6 @@ public class Room : GameObject
         ConnectsToRoom = [];
     }
 
-    // Vi vill kunna uppdatera vårt rums description om något i rummet ändras.
-    // En metod som antagligen ska kallas på av StoryManager eller GameManager.
-    // Eller så sköts det helt av story, med kapitel eller dylikt. Vi får se.
-    public void UpdateDescription(string newDescription)
-    {
-        Description = newDescription;
-    }
-
-
     public virtual void StartRoom()
     {
         Console.WriteLine("This is just the base class for the Room Object, ");

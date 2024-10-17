@@ -1,36 +1,9 @@
-public class HelpCommand
+public class HelpCommand : Command
 {
-    public static void Execute(string[] Args)
+    public HelpCommand() : base("HelpCommand", "Help - Shows commands available in current menu") { }
+
+    public override void Execute(string[] commandArgs)
     {
-        if (Args.Length < 2)
-        {
-            Console.WriteLine("Available Commands: help, exit.");
-        }
-        else
-        {
-            switch (Args[1])
-            {
-                case "help":
-                {
-                    Console.WriteLine("Help shows a list of available commands.");
-                    break;
-                }
-                case "exit":
-                {
-                    Console.WriteLine("Exit terminates the program.");
-                    break;
-                }
-                case "open":
-                {
-                    Console.WriteLine("Opens doors, locks or other closed objects.");
-                    break;
-                }
-                default:
-                {
-                    Console.WriteLine("Available Commands: help, exit.");
-                    break;
-                }
-            }
-        }
+        throw new NotImplementedException();
     }
 }

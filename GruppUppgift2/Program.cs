@@ -2,6 +2,11 @@
 {
     static void Main(string[] args)
     {
-        GameManager.Run();
+        Menu mainMenu = new MainMenu();
+
+        while (true)
+        {
+
+        }
     }
 }

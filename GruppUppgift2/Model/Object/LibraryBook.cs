@@ -11,8 +11,8 @@ public class LibraryBook : UsableItem
         // Lägg till nyckeln i rummet. Behöver också lägga till att den används med klockan.
         HiddenLibraryKey key = new
         (
-            "A hidden key",
-            "A small key that was hidden inside a book.",
+            "key",
+            "A small <key> that was hidden inside a book.",
             "You need to use this with something.",
             []
         );

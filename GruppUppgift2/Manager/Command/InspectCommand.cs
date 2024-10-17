@@ -4,6 +4,16 @@ public class InspectCommand : Command
 
     public override void Execute(Menu menu, string[] commandArgs)
     {
-        throw new NotImplementedException();
+        foreach (GameObject item in RoomManager.currentRoom.Items)
+        {
+            if (item.Name.Equals(commandArgs[1]))
+            {
+                Console.WriteLine(item.Description);
+                return;
+            }
+        }
+
+        Console.WriteLine("There is nothing to inspect with that name");
+
     }
 }

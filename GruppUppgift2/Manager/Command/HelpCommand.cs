@@ -11,6 +11,5 @@ public class HelpCommand : Command
             Console.WriteLine($"{++listPoint}. {command.HelpDescription}");
         }
         Console.WriteLine("Please Enter a command: <name of command> ");
-        Console.WriteLine("Type 'help' for a list of commands");
     }
 }

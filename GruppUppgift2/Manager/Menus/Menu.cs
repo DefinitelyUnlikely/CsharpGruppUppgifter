@@ -34,5 +34,7 @@ public abstract class Menu
                 return;
             }
         }
+
+        Console.WriteLine("There is no such command available at the moment");
     }
 }

@@ -6,7 +6,8 @@
 
         while (true)
         {
-
+            mainMenu.TryExecuteCommand("help");
+            mainMenu.TryExecuteCommand(Console.ReadLine()!);
         }
     }
 }

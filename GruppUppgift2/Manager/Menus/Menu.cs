@@ -16,6 +16,11 @@ public abstract class Menu
         commands.Add(command);
     }
 
+    public List<Command> GetCommands()
+    {
+        return commands;
+    }
+
     public void TryExecuteCommand(string input)
     {
         string[] commandArgs = input.Split(" ");
@@ -25,7 +30,7 @@ public abstract class Menu
         {
             if (command.Name.Equals(commandName))
             {
-                command.Execute(commandArgs);
+                command.Execute(commandArgs, this);
                 return;
             }
         }

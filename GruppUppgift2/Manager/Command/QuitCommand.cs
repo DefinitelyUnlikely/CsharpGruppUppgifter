@@ -2,9 +2,9 @@ using System.Security.Cryptography.X509Certificates;
 
 public class QuitCommand : Command
 {
-    public QuitCommand() : base("QuitCommand", "Quit - Quits to main menu. If on main menu, quits application.") { }
+    public QuitCommand() : base("quit", "Quit - Quits to main menu. If on main menu, quits application.") { }
 
-    public override void Execute(string[] commandArgs)
+    public override void Execute(string[] commandArgs, Menu menu)
     {
         if (GameManager.gameRunning)
         {

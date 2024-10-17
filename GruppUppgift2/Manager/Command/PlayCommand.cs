@@ -1,9 +1,9 @@
 public class PlayCommand : Command
 {
-    public PlayCommand() : base("PlayCommand", "Start the game") { }
+    public PlayCommand() : base("play", "Play - Start the game") { }
 
-    public override void Execute(string[] commandArgs)
+    public override void Execute(string[] commandArgs, Menu menu)
     {
-        throw new NotImplementedException();
+        GameManager.Run();
     }
 }

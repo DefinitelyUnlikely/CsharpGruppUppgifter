@@ -1,21 +1,23 @@
 public class GameManager
 {
-    public static bool running = true;
+    public static bool gameRunning = false;
 
     public static void Run()
     {
+
         RoomManager.CreateRooms();
         RoomManager.EnterRoom(0);
 
         Player player = new Player();
 
-        while (running)
+        gameRunning = true;
+        while (gameRunning)
         {
             RoomManager.currentRoom.PrintStory();
             Console.Write("Enter input: ");
-            string[] userInput = Console.ReadLine()!.ToLower().Split();
+            string userInput = Console.ReadLine()!;
             Console.Clear();
-            CommandManager.TryExecuteCommand(userInput);
+            // Menu.TryExecuteCommand(userInput);
         }
     }
 }

@@ -1,36 +1,16 @@
-public class HelpCommand
+public class HelpCommand : Command
 {
-    public static void Execute(string[] Args)
+    public HelpCommand() : base("help", "Help - Shows commands available in current menu") { }
+
+    public override void Execute(string[] commandArgs, Menu menu)
     {
-        if (Args.Length < 2)
+        // Vi vill kanske ta bort listPoint, ifall det ses förvirrande för användaren.
+        int listPoint = 0;
+        foreach (Command command in menu.GetCommands())
         {
-            Console.WriteLine("Available Commands: help, exit.");
+            Console.WriteLine($"{++listPoint}. {command.HelpDescription}");
         }
-        else
-        {
-            switch (Args[1])
-            {
-                case "help":
-                {
-                    Console.WriteLine("Help shows a list of available commands.");
-                    break;
-                }
-                case "exit":
-                {
-                    Console.WriteLine("Exit terminates the program.");
-                    break;
-                }
-                case "open":
-                {
-                    Console.WriteLine("Opens doors, locks or other closed objects.");
-                    break;
-                }
-                default:
-                {
-                    Console.WriteLine("Available Commands: help, exit.");
-                    break;
-                }
-            }
-        }
+        Console.WriteLine("Please Enter a command: <name of command> ");
+        Console.WriteLine("Type 'help' for a list of commands");
     }
 }

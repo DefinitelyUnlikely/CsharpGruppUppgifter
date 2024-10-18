@@ -2,6 +2,12 @@
 {
     static void Main(string[] args)
     {
-        GameManager.Run();
+        Menu mainMenu = new MainMenu();
+
+        while (true)
+        {
+            mainMenu.TryExecuteCommand("help");
+            mainMenu.TryExecuteCommand(Console.ReadLine()!);
+        }
     }
 }

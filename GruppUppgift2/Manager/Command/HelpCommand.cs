@@ -1,12 +1,13 @@
 public class HelpCommand : Command
 {
-    public HelpCommand() : base("help", "Help - Shows commands available in current menu") { }
+    public HelpCommand()
+        : base("help", "Help - Shows commands available in current menu") { }
 
-    public override void Execute(Menu menu, string[] commandArgs)
+    public override void Execute(string[] commandArgs)
     {
         // Vi vill kanske ta bort listPoint, ifall det ses förvirrande för användaren.
         int listPoint = 0;
-        foreach (Command command in menu.GetCommands())
+        foreach (Command command in MenuManager.GetCurrentMenu().GetCommands())
         {
             Console.WriteLine($"{++listPoint}. {command.HelpDescription}");
         }

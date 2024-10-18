@@ -1,8 +1,9 @@
 public class UseCommand : Command
 {
-    public UseCommand() : base("use", "Use <item> - use specified item, if possible. ") { }
+    public UseCommand()
+        : base("use", "Use <item> - use specified item, if possible. ") { }
 
-    public override void Execute(Menu menu, string[] commandArgs)
+    public override void Execute(string[] commandArgs)
     {
         foreach (GameObject item in RoomManager.currentRoom.Items)
         {

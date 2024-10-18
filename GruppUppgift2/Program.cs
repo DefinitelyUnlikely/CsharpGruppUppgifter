@@ -2,12 +2,10 @@
 {
     static void Main(string[] args)
     {
-        Menu mainMenu = new MainMenu();
-
         while (true)
         {
-            mainMenu.TryExecuteCommand("help");
-            mainMenu.TryExecuteCommand(Console.ReadLine()!);
+            MenuManager.GetCurrentMenu().TryExecuteCommand("help");
+            MenuManager.GetCurrentMenu().TryExecuteCommand(Console.ReadLine()!);
         }
     }
 }

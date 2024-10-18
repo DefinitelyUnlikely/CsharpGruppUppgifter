@@ -1,8 +1,9 @@
 public class PlayCommand : Command
 {
-    public PlayCommand() : base("play", "Play - Start the game") { }
+    public PlayCommand()
+        : base("play", "Play - Start the game") { }
 
-    public override void Execute(Menu menu, string[] commandArgs)
+    public override void Execute(string[] commandArgs)
     {
         GameManager.Run();
     }

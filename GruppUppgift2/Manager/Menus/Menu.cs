@@ -1,6 +1,5 @@
 public abstract class Menu
 {
-
     private List<Command> commands = [];
 
     // Om vi kör att alla menyer kan välja help och quit
@@ -30,7 +29,7 @@ public abstract class Menu
         {
             if (command.Name.Equals(commandName))
             {
-                command.Execute(this, commandArgs);
+                command.Execute(commandArgs);
                 return;
             }
         }

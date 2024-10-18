@@ -1,8 +1,9 @@
 public class InspectCommand : Command
 {
-    public InspectCommand() : base("inspect", "Inspect <item> - inspects an item in the game world.") { }
+    public InspectCommand()
+        : base("inspect", "Inspect <item> - inspects an item in the game world.") { }
 
-    public override void Execute(Menu menu, string[] commandArgs)
+    public override void Execute(string[] commandArgs)
     {
         foreach (GameObject item in RoomManager.currentRoom.Items)
         {
@@ -14,6 +15,5 @@ public class InspectCommand : Command
         }
 
         Console.WriteLine("There is nothing to inspect with that name");
-
     }
 }

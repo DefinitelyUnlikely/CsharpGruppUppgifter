@@ -5,6 +5,10 @@ public class UseCommand : Command
 
     public override void Execute(string[] commandArgs)
     {
+        if (commandArgs.Length < 2)
+        {
+            throw new ArgumentException("Use what?");
+        }
         foreach (GameObject item in RoomManager.currentRoom.Items)
         {
             if (item.Name.Equals(commandArgs[1]))
@@ -16,7 +20,7 @@ public class UseCommand : Command
                 }
                 else
                 {
-                    Console.WriteLine(item.Description);
+                    item.Display();
                     return;
                 }
             }

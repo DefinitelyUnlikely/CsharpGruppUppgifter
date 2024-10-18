@@ -10,6 +10,7 @@ public class QuitCommand : Command
         if (GameManager.gameRunning)
         {
             GameManager.gameRunning = false;
+            MenuManager.SetMenu(new MainMenu());
         }
         else
         {

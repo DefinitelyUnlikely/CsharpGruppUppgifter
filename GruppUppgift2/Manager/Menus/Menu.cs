@@ -29,7 +29,14 @@ public abstract class Menu
         {
             if (command.Name.Equals(commandName))
             {
-                command.Execute(commandArgs);
+                try
+                {
+                    command.Execute(commandArgs);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
                 return;
             }
         }

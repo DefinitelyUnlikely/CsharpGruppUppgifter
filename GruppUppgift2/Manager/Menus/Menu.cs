@@ -30,9 +30,11 @@ public abstract class Menu
         {
             if (command.Name.Equals(commandName))
             {
-                command.Execute(commandArgs, this);
+                command.Execute(this, commandArgs);
                 return;
             }
         }
+
+        Console.WriteLine("There is no such command available at the moment");
     }
 }

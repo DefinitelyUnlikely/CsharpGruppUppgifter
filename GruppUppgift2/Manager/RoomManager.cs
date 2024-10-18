@@ -1,6 +1,6 @@
 public class RoomManager
 {
-    public static List<Room> rooms = [];
+    public static Dictionary<string, Room> rooms = [];
 
     // Stores the currently active room
     public static Room currentRoom;
@@ -9,13 +9,20 @@ public class RoomManager
     public static void CreateRooms()
     {
         //rooms.Add(new HubRoom().CreateRoom());
-        rooms.Add(new ExampleRoom().CreateRoom());
+        Room example = new ExampleRoom().CreateRoom();
+        rooms.Add(example.Name, example);
+
+        Room library = new MartinsRoom().CreateRoom();
+        rooms.Add(library.Name, library);
+
+        Room speed = new SpeedTrialRoom().CreateRoom();
+        rooms.Add(speed.Name, speed);
     }
 
     // Called whenever a new room is entered to show description from base class.
-    public static void EnterRoom(int roomId)
+    public static void EnterRoom(string roomName)
     {
-        currentRoom = rooms[roomId];
+        currentRoom = rooms[roomName];
         //currentRoom.Display();
         Console.Write("press any key to continue");
         Console.ReadKey();

@@ -5,19 +5,25 @@ public class GameManager
     public static void Run()
     {
 
+        Menu libMenu = new LibraryMenu();   // I framtiden, menu för the hub.
+
         RoomManager.CreateRooms();
-        RoomManager.EnterRoom(0);
+        RoomManager.EnterRoom("The Library");   // I framtiden, the hub.
 
         Player player = new Player();
 
+
         gameRunning = true;
+        RoomManager.currentRoom.PrintStory();
+        libMenu.TryExecuteCommand("help");
         while (gameRunning)
         {
-            RoomManager.currentRoom.PrintStory();
+
+
+            Console.WriteLine("Type 'help' for a list of commands");
             Console.Write("Enter input: ");
             string userInput = Console.ReadLine()!;
-            Console.Clear();
-            // Menu.TryExecuteCommand(userInput);
+            libMenu.TryExecuteCommand(userInput);
         }
     }
 }

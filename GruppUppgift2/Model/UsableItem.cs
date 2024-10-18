@@ -15,12 +15,10 @@ public class UsableItem : GameObject
         UsableWith = useWith ?? [];
     }
 
-
     public virtual void UseItem()
     {
         Console.WriteLine(UseDescription);
     }
-
 
     public virtual void UseItemWith(GameObject item)
     {

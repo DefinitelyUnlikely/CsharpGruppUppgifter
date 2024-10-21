@@ -8,32 +8,66 @@ public class RoomManager
     // Stores the currently active room
     public static Room currentRoom;
 
+    // Ha koll på senaste rum för "leave"-kommando."
+    private static string lastRoom;
+
     // Called at game initialization to create all rooms.
     public static void CreateRooms()
     {
-        //rooms.Add(new HubRoom().CreateRoom());
+        // Bara för att quit till main menu ska funka.
+        if (rooms.Count != 0)
+        {
+            currentRoom = rooms["The Hub"];
+            return;
+        }
+
+        // Skapar alla rummen i spelet.
+        Room hub = new HubRoom().CreateRoom();
+        rooms.Add(hub.Name, hub);
+
         Room example = new ExampleRoom().CreateRoom();
         rooms.Add(example.Name, example);
 
-        Room library = new MartinsRoom().CreateRoom();
+        Room library = new TheLibrary().CreateRoom();
         rooms.Add(library.Name, library);
 
         Room speed = new SpeedTrialRoom().CreateRoom();
         rooms.Add(speed.Name, speed);
 
-        currentRoom = rooms["The Library"];
+        currentRoom = rooms["The Hub"];
     }
 
     // Called whenever a new room is entered to show description from base class.
     public static void EnterRoom(string roomName)
     {
+        Console.Clear();
+        lastRoom = currentRoom.Name;
         currentRoom = rooms[roomName];
         currentRoom.Display();
         // MenuManager.GetCurrentMenu().TryExecuteCommand("help");
         // Deprecated. Runs in Menu.SetMenu()
-        Console.Write("press any key to continue");
-        Console.ReadKey();
-        Console.Clear();
+        Console.WriteLine("press any key to continue");
+        Console.ReadKey(true);
         currentRoom.StartRoom();
+    }
+
+    // Används av enter command för
+    public static void TryEnterRoom(string roomName)
+    {
+        foreach (string name in currentRoom.ConnectedRooms)
+        {
+            if (roomName.Equals(name, StringComparison.OrdinalIgnoreCase))
+            {
+                EnterRoom(name);
+                return;
+            }
+        }
+        Console.WriteLine("No room with that name. Available rooms are: ");
+        Console.WriteLine(string.Join(", ", currentRoom.ConnectedRooms));
+    }
+
+    public static void LeaveRoom()
+    {
+        EnterRoom(lastRoom);
     }
 }

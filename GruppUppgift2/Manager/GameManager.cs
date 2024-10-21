@@ -9,11 +9,11 @@ public class GameManager
         Console.WriteLine("Enter your name: ");
         Player player = new Player(Console.ReadLine());
 
-        MenuManager.SetMenu(new LibraryMenu()); // I framtiden, menu för the hub.
-        Menu currentMenu = MenuManager.GetCurrentMenu();
+        // MenuManager.SetMenu(new LibraryMenu()); // I framtiden, menu för the hub.
+        // Menu currentMenu = MenuManager.GetCurrentMenu();
 
         RoomManager.CreateRooms();
-        RoomManager.EnterRoom("The Library"); // I framtiden, the hub.
+        RoomManager.EnterRoom("The Hub"); // I framtiden, the hub.
 
         gameRunning = true;
 
@@ -25,7 +25,7 @@ public class GameManager
             // Console.WriteLine("Type 'help' for a list of commands");
             // Console.Write("Enter input: ");
             string userInput = Console.ReadLine()!;
-            currentMenu.TryExecuteCommand(userInput);
+            MenuManager.GetCurrentMenu().TryExecuteCommand(userInput);
         }
     }
 }

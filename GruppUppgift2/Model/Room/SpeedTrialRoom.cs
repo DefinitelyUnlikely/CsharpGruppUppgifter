@@ -1,10 +1,13 @@
 public class SpeedTrial : Room
 {
-    public SpeedTrial(string name, string description, string[] connectsToRoom, Story story, List<GameObject>? items = null)
-    : base(name, description, connectsToRoom, story, items)
-    {
-
-    }
+    public SpeedTrial(
+        string name,
+        string description,
+        string[] connectedRooms,
+        Story story,
+        List<GameObject>? items = null
+    )
+        : base(name, description, story, connectedRooms, items, null) { }
 
     // public async Task TimerTask()
     // {
@@ -21,12 +24,12 @@ public class SpeedTrial : Room
         Task timerTask = Task.Run(async () =>
         {
             await Task.Delay(5000);
-            if (true)  // Placeholder. Kolla om spelaren fått nyckeln genom att trycka på enter. Då skriver vi inte detta.
+            if (true) // Placeholder. Kolla om spelaren fått nyckeln genom att trycka på enter. Då skriver vi inte detta.
             {
                 Console.WriteLine("Too slow!");
             }
             // Logik för att sparka ut spelaren ur rummet
-            // Jag tänker att detta skall skötas via att man agerar med player 
+            // Jag tänker att detta skall skötas via att man agerar med player
             // och flyttar player.
         });
 
@@ -37,26 +40,23 @@ public class SpeedTrial : Room
         else
         {
             Console.WriteLine("I said ENTER!");
+            RoomManager.LeaveRoom();
             // Vänta på att bli utsparkad.
         }
     }
 }
 
-// Används för att kunna skapa rummet till vår RoomManager. 
+// Används för att kunna skapa rummet till vår RoomManager.
 public class SpeedTrialRoom
 {
     public string name = "Speed Trial";
     public string description = "...";
 
-    List<Chapter> chapters = new()
-    {
-        new Chapter("...", "..."),
-    };
+    List<Chapter> chapters = new() { new Chapter("...", "...") };
 
     public Room CreateRoom()
     {
         Story story = new Story(chapters);
         return new SpeedTrial(name, description, ["The Hub"], story);
     }
-
 }

@@ -1,37 +1,51 @@
 public class Room : GameObject
 {
-    public string[] ConnectsToRoom { get; }
+    public string[] ConnectedRooms { get; }
     public List<GameObject> Items { get; }
+    public Story RoomStory { get; }
 
     // Tillagt av Olof, så det är kopplat till story.
-    public Story story;
+    public Menu? roomMenu { get; }
 
     public Room(
         string name,
         string description,
-        string[] connectsToRoom,
         Story story,
-        List<GameObject>? items = null
+        string[] connectedRooms,
+        List<GameObject>? items,
+        Menu? menu
     )
         : base(name, description)
     {
-        ConnectsToRoom = connectsToRoom;
+        RoomStory = story;
+        ConnectedRooms = connectedRooms;
         Items = items ?? [];
-        this.story = story;
+        roomMenu = menu ?? null;
     }
 
-    public Room(string name, string description, Story story, List<GameObject>? items = null)
+    public Room(string name, string description, Story story, List<GameObject>? items, Menu? menu)
         : base(name, description)
     {
+        RoomStory = story;
+        ConnectedRooms = [];
         Items = items ?? [];
-        this.story = story;
-        ConnectsToRoom = [];
+        roomMenu = menu ?? null;
     }
 
-    // Används för att köra metoder i rummet?
     public virtual void StartRoom()
     {
-        Console.WriteLine("This is just the base class for the Room Object, ");
+        // Behåll föregående meny om ingen specifik angetts.
+        if (roomMenu != null)
+        {
+            MenuManager.SetMenu(roomMenu);
+        }
+        Update();
+    }
+
+    public virtual void Update()
+    {
+        Console.WriteLine(RoomStory.GetStoryDescription());
+        Console.WriteLine("Type help for a list of commands.");
     }
 
     // Tillagt av Olof, så det är kopplat till story.

@@ -45,7 +45,7 @@ the periodic table."
     {
         // Story is a class containing all Chapters and keeps track of where in the story you are.
         Story story = new Story(chapters);
-        Room room = new(name, description, story, items);
+        Room room = new(name, description, story, items, null);
         return room;
     }
 }

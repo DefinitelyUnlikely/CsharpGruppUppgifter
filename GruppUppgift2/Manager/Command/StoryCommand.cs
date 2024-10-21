@@ -5,6 +5,6 @@ public class StoryCommand : Command
 
     public override void Execute(string[] commandArgs)
     {
-        RoomManager.currentRoom.Display();
+        Console.WriteLine(RoomManager.currentRoom.RoomStory.GetStoryDescription());
     }
 }

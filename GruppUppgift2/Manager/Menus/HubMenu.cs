@@ -1,10 +1,10 @@
-public class LibraryMenu : Menu
+public class HubMenu : Menu
 {
-    public LibraryMenu()
+    public HubMenu()
     {
         AddCommand(new UseCommand());
         AddCommand(new InspectCommand());
         AddCommand(new StoryCommand());
-        AddCommand(new LeaveCommand());
+        AddCommand(new EnterCommand());
     }
 }

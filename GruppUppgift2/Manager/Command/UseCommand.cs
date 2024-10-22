@@ -10,6 +10,16 @@ public class UseCommand : Command
             throw new ArgumentException("Use what?");
         }
 
+        // Fler än 3 strängar borde betyda use * with *
+        // Så försöker dela upp item names.
+        if (commandArgs.Length > 3)
+        {
+            string[] items =
+                InputManipulationService.GetStringsWithoutWord(commandArgs, "with") ?? [];
+            if (items.Length != 2)
+                throw new ArgumentException("Invalid input.");
+        }
+
         string itemName = string.Join(" ", commandArgs.Skip(1));
         foreach (GameObject item in RoomManager.currentRoom.Items)
         {

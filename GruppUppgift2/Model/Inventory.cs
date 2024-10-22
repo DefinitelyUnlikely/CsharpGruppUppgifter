@@ -26,6 +26,18 @@ public class Inventory
         }
     }
 
+    public UsableItem? GetItemByName(string itemName)
+    {
+        foreach (UsableItem item in items)
+        {
+            if (itemName.Equals(item.Name, StringComparison.OrdinalIgnoreCase))
+            {
+                return item;
+            }
+        }
+        return null;
+    }
+
     public bool CheckInventory(UsableItem item)
     {
         return items.Contains(item);
@@ -42,7 +54,7 @@ public class Inventory
             Console.WriteLine("Your inventory contains:");
             foreach (var item in items)
             {
-                Console.WriteLine($"- {item}");
+                Console.WriteLine($"- {item.Name}");
             }
         }
     }

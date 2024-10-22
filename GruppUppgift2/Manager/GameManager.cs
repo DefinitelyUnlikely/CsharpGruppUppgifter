@@ -7,6 +7,7 @@ public class GameManager
     {
         gameRunning = true;
 
+        // Ifall vi vill använda spelarens namn till något.
         Console.WriteLine("Enter your name: ");
         player = new Player(Console.ReadLine());
 

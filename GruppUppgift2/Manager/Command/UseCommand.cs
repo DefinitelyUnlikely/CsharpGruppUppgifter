@@ -9,9 +9,11 @@ public class UseCommand : Command
         {
             throw new ArgumentException("Use what?");
         }
+
+        string itemName = string.Join(" ", commandArgs.Skip(1));
         foreach (GameObject item in RoomManager.currentRoom.Items)
         {
-            if (item.Name.Equals(commandArgs[1]))
+            if (item.Name.Equals(itemName))
             {
                 if (item is UsableItem mediator)
                 {

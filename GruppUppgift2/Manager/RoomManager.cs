@@ -1,5 +1,3 @@
-using System.Linq;
-
 public class RoomManager
 {
     // Dictionary med alla rum. Room.Name används som key.
@@ -30,9 +28,6 @@ public class RoomManager
 
         Room library = new TheLibrary().CreateRoom();
         rooms.Add(library.Name, library);
-
-        Room speed = new SpeedTrialRoom().CreateRoom();
-        rooms.Add(speed.Name, speed);
 
         currentRoom = rooms["The Hub"];
     }

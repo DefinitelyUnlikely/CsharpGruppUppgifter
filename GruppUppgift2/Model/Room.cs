@@ -48,6 +48,4 @@ public class Room : GameObject
         Console.WriteLine("Type help for a list of commands.");
     }
 
-    // Tillagt av Olof, så det är kopplat till story.
-    // Tyder på att vi inte kommer behöva StartRoom eller UpdateDescription.
 }

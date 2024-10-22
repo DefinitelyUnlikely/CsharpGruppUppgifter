@@ -3,12 +3,16 @@ public class CombinationPadlock : UsableItem
     public bool Unlocked = false;
     private string Combination { get; }
 
-    public CombinationPadlock(string name, string description, string combination, string? useDescription = null, List<GameObject>? useWith = null)
-    : base(name, description, useDescription, useWith)
+    public CombinationPadlock(
+        string name,
+        string description,
+        string combination,
+        string? useDescription = null
+    )
+        : base(name, description, useDescription)
     {
         Combination = combination;
     }
-
 
     public override void UseItem()
     {

@@ -1,3 +1,5 @@
+using System.Linq;
+
 public class UseCommand : Command
 {
     public UseCommand()
@@ -10,17 +12,16 @@ public class UseCommand : Command
             throw new ArgumentException("Use what?");
         }
 
-        // Fler än 3 strängar borde betyda use * with *
-        // Så försöker dela upp item names.
-        if (commandArgs.Length > 3)
+        if (commandArgs.Contains("with"))
         {
-            string[] items =
-                InputManipulationService.GetStringsWithoutWord(commandArgs, "with") ?? [];
+            string[] items = InputUtilities.GetStringsWithoutWord(commandArgs, "with") ?? [];
             if (items.Length != 2)
                 throw new ArgumentException("Invalid input.");
+            UseWith(items);
+            return;
         }
 
-        string itemName = string.Join(" ", commandArgs.Skip(1));
+        string itemName = InputUtilities.GetCleanString(commandArgs);
         foreach (GameObject item in RoomManager.currentRoom.Items)
         {
             if (item.Name.Equals(itemName))
@@ -39,5 +40,23 @@ public class UseCommand : Command
         }
 
         Console.WriteLine("There seems to be no use for that item");
+    }
+
+    private void UseWith(string[] items)
+    {
+        foreach (GameObject item in RoomManager.currentRoom.Items)
+        {
+            if (item.Name.Equals(items[0]))
+            {
+                if (item is UsableItem mediator)
+                {
+                    mediator.UseItemWith(items[1]);
+                }
+                else
+                {
+                    throw new ArgumentException($"{item.Name} cannot be used.");
+                }
+            }
+        }
     }
 }

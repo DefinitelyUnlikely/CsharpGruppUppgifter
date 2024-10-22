@@ -1,15 +1,11 @@
-
 public class HiddenLibraryKey : UsableItem
 {
+    public HiddenLibraryKey(string name, string description, string? useDescription = null)
+        : base(name, description, useDescription) { }
 
-    public HiddenLibraryKey(string name, string description, string? useDescription = null, List<GameObject>? useWith = null)
-    : base(name, description, useDescription, useWith)
+    public override void UseItemWith(string itemName)
     {
-    }
-
-    public override void UseItemWith(GameObject item)
-    {
-        if (!UsableWith.Contains(item))
+        if (!UsableWith.Contains(itemName))
         {
             Console.WriteLine("Cannot use this key with that object.");
             return;
@@ -17,7 +13,5 @@ public class HiddenLibraryKey : UsableItem
 
         Console.WriteLine("The Key clicks!");
         // här hade vi nu bytt kapitel ett steg framåt i mitt room objekt.
-
     }
-
 }

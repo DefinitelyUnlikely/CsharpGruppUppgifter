@@ -1,31 +1,28 @@
 // Detta är föremål som skall kunna interageras med på ett sätt som är mer betydelsefullt än
 // enbart skriva ut en beskriving vid inspektion. Objekt ska ta hand om sig själva, så mycket kring
 // denna klass tas mycket möjligt hand om av andra klasser.
-public class UsableItem : GameObject
+public class CollectibleItem : UsableItem
 {
-    protected readonly string? UseDescription;
-    protected string UsableWith { get; }
+    public bool actionOnPickup;
 
-    public UsableItem(
+    public CollectibleItem(
         string name,
         string description,
         string? useDescription = null,
-        string useWith = ""
+        string useWith = "",
+        bool actionOnPickup = false
     )
-        : base(name, description)
+        : base(name, description, useDescription, useWith)
     {
-        UseDescription = useDescription;
-        // ?? är en short hand för if (useWith == null) { UsableWith = []; } else { UsableWith = useWith; }
-        // Gör så att vi slipper kolla för null i metoden UseItemWith.
-        UsableWith = useWith;
+        this.actionOnPickup = actionOnPickup;
     }
 
-    public virtual void UseItem()
+    public override void UseItem()
     {
         Console.WriteLine(UseDescription);
     }
 
-    public virtual void UseItemWith(string itemName)
+    public override void UseItemWith(string itemName)
     {
         if (!UsableWith.Contains(itemName))
         {
@@ -34,5 +31,10 @@ public class UsableItem : GameObject
         }
 
         Console.WriteLine($"Using {this} with {itemName}. Implement function.");
+    }
+
+    public void PickedUp()
+    {
+        // Action on item picked up
     }
 }

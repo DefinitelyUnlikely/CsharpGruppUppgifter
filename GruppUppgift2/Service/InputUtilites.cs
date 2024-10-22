@@ -2,7 +2,7 @@ using System.Text.RegularExpressions;
 
 public partial class InputUtilities
 {
-    public static string[]? GetStringsWithoutWord(string[] args, string divider)
+    public static string[]? GetInputWithoutDivider(string[] args, string divider)
     {
         int idx = 0;
         for (int i = 0; i < args.Length; i++)
@@ -18,7 +18,11 @@ public partial class InputUtilities
         }
 
         string partOne = string.Join(" ", args.Take(idx).Skip(1));
-        string partTwo = string.Join(" ", args.Skip(idx));
+        string partTwo = string.Join(" ", args.Skip(idx + 1));
+        if (string.IsNullOrEmpty(partOne) || string.IsNullOrEmpty(partTwo))
+        {
+            return null;
+        }
         string[] stringArray = [partOne, partTwo];
         return stringArray;
     }
@@ -34,7 +38,7 @@ public partial class InputUtilities
     }
 
     // Idé på namn för metod?
-    public static string GetCleanString(string[] commandArgs)
+    public static string GetInputAsString(string[] commandArgs)
     {
         return RemoveNonLetterNonNumber(GetSingleString(commandArgs));
     }

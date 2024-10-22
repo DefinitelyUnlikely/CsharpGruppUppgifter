@@ -9,7 +9,7 @@ public class EnterCommand : Command
         {
             throw new ArgumentException("Enter 'roomname'.");
         }
-        string roomName = InputUtilities.GetCleanString(commandArgs);
+        string roomName = InputUtilities.GetInputAsString(commandArgs);
         RoomManager.TryEnterRoom(roomName);
     }
 }

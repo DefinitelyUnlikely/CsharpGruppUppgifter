@@ -5,7 +5,7 @@ public class InspectCommand : Command
 
     public override void Execute(string[] commandArgs)
     {
-        string itemName = InputUtilities.GetCleanString(commandArgs);
+        string itemName = InputUtilities.GetInputAsString(commandArgs);
         foreach (GameObject item in RoomManager.currentRoom.Items)
         {
             if (item.Name.Equals(itemName, StringComparison.OrdinalIgnoreCase))

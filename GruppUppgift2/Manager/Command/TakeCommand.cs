@@ -10,7 +10,7 @@ public class TakeCommand : Command
             throw new ArgumentException("Take what?");
         }
 
-        string itemName = InputUtilities.GetCleanString(commandArgs);
+        string itemName = InputUtilities.GetInputAsString(commandArgs);
 
         foreach (GameObject item in RoomManager.currentRoom.Items)
         {

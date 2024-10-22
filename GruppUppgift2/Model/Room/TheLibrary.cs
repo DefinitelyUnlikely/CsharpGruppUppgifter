@@ -4,8 +4,7 @@
 public class TheLibrary
 {
     public string name = "The Library";
-    public string description =
-        "An old study, looking very much like any other library, albeit older and dustier.";
+    public string description = "An old study, looking very much like any other library, albeit older and dustier.";
     public Menu menu = new LibraryMenu();
 
     // Detta är föremålen som finns när rummet skapas. Vi lägger till nyckeln till klockan efter man gör useItem på LibraryBook.
@@ -37,8 +36,15 @@ public class TheLibrary
             ),
             new LibraryBook(
                 "1984",
+                "A book with no sign of use.",
                 "As you pick up the book, you notice it is lighter than it probably should be. You open it up, revealing a hidden key."
             ),
+
+            new InnerLibraryDoor(
+                "weird door",
+                "A door that cannot be descriped. Not for a lack of features, but your mind simply can't grasp it.",
+                "As you opened the door, you feel yourself being transported back to the Hub, but with a sense of completion."
+            )
         };
 
     List<Chapter> chapters =
@@ -46,14 +52,14 @@ public class TheLibrary
         {
             new Chapter(
                 "introduction",
-                @"A dusty old Library. Mold covers the ceiling and even thought you cannot find a light source, the room is brigtly lit. 
+            @"A dusty old Library. Mold covers the ceiling and even thought you cannot find a light source, the room is brigtly lit. 
             Along one of the walls is a <bookcase>, filled to the brim with books. In a corner you see an old <chair> that looks to be falling apart. 
-            Right infront of you is a door, with two padlocks, marked <padlock1> and <padlock2>. Awfully convinient. Both take a 4 number combination. Above it is an old <clock>. 
+            Right infront of you is a door, with two padlocks, marked <Library Padlock #1> and <padlock2>. Awfully convinient. Both take a 4 number combination. Above it is an old <clock>. 
             The large hand is stuck on 12 and the small hand on 4. You can't help but think 'AM or PM', as if that matters."
             ),
             new Chapter(
                 "The clock is turned",
-                @"A dusty old Library. Mold covers the ceiling and even thought you cannot find a light source, the room is brigtly lit. 
+            @"A dusty old Library. Mold covers the ceiling and even thought you cannot find a light source, the room is brigtly lit. 
             Along one of the walls is a <bookcase>, filled to the brim with books. In a corner you see an old <chair> that looks to be falling apart. 
             Right infront of you is a door, with two <padlocks>. Both take a 4 number combination. Above it is an old <clock>. 
             The large hand is now stuck on 6 and the small hand on 10."

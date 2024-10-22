@@ -1,13 +1,14 @@
 public class GameManager
 {
     public static bool gameRunning = false;
+    public static Player player;
 
     public static void Run()
     {
         gameRunning = true;
 
         Console.WriteLine("Enter your name: ");
-        Player player = new Player(Console.ReadLine());
+        player = new Player(Console.ReadLine());
 
         // MenuManager.SetMenu(new LibraryMenu()); // I framtiden, menu för the hub.
         // Menu currentMenu = MenuManager.GetCurrentMenu();

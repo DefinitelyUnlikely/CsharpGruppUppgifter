@@ -1,7 +1,7 @@
 public class InnerLibraryDoor(string name, string description, string? useDescription = null)
     : UsableItem(name, description, useDescription)
 {
-    public override async void UseItem()
+    public override void UseItem()
     {
         Console.WriteLine(Description);
 

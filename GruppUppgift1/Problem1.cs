@@ -4,11 +4,6 @@ public class Problem1
 {
     public static void Run()
     {
-
-        // Om man vill hade denna funktion kunna innehålla allt som är inuti run
-        // och vi skippar returnen. Men jag tänker att en funktion som bara skickar tillbaka 
-        // min och max för en int[] är mer återandvändbar än en som tvingar dig att skriva in saker i 
-        // terminalen etc. 
         static int[] MinAndMax(int[] ints)
         {
             return [ints.Min(), ints.Max()];

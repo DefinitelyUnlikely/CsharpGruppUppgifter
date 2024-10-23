@@ -25,7 +25,7 @@ public class TakeCommand : Command
                         mediator.PickedUp();
                     }
                     // Kanske inte alltid ska ta bort från rummet?
-                    // RoomManager.currentRoom.Items.Remove(mediator);
+                    RoomManager.currentRoom.Items.Remove(mediator);
                     return;
                 }
                 else

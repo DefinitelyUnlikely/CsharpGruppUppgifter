@@ -20,7 +20,7 @@ public class CombinationPadlock : UsableItem
         Console.Write("Enter the 4 digit code: ");
         if (!Console.ReadLine()!.Equals(Combination))
         {
-            Console.WriteLine("You pull the lock but it won't budge, try another combination");
+            Console.WriteLine("You pull the lock but it won't budge, You'll have to use it again and try another combination");
             return;
         }
 

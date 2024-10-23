@@ -11,6 +11,7 @@ public class LibraryBook : UsableItem
             new(
                 "key",
                 "A small <key> that was hidden inside a book.",
+                "clock",
                 "You need to use this with something."
             );
         RoomManager.currentRoom.Items.Add(key);

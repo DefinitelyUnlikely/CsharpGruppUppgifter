@@ -1,7 +1,7 @@
-public class HiddenLibraryKey : UsableItem
+public class HiddenLibraryKey : CollectibleItem
 {
-    public HiddenLibraryKey(string name, string description, string? useDescription = null)
-        : base(name, description, useDescription) { }
+    public HiddenLibraryKey(string name, string description, string useWith, string? useDescription = null)
+        : base(name, description, useDescription, useWith) { }
 
     public override void UseItemWith(string itemName)
     {
@@ -11,7 +11,8 @@ public class HiddenLibraryKey : UsableItem
             return;
         }
 
-        Console.WriteLine("The Key clicks!");
-        // här hade vi nu bytt kapitel ett steg framåt i mitt room objekt.
+        Console.WriteLine("The Key clicks!\nAs you turn the key, you notice the clocks face rotates.");
+        RoomManager.currentRoom.RoomStory.NextChapter();
+        Console.WriteLine(RoomManager.currentRoom.RoomStory.GetStoryDescription());
     }
 }

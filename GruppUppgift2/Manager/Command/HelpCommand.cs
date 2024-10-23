@@ -5,11 +5,9 @@ public class HelpCommand : Command
 
     public override void Execute(string[] commandArgs)
     {
-        // Vi vill kanske ta bort listPoint, ifall det ses förvirrande för användaren.
-        int listPoint = 0;
         foreach (Command command in MenuManager.GetCurrentMenu().GetCommands())
         {
-            Console.WriteLine($"{++listPoint}. {command.HelpDescription}");
+            Console.WriteLine($"• {command.HelpDescription}");
         }
         Console.WriteLine("Please Enter a command: <name of command> ");
     }

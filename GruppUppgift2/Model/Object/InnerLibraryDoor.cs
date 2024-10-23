@@ -1,7 +1,7 @@
 public class InnerLibraryDoor(string name, string description, string? useDescription = null)
     : UsableItem(name, description, useDescription)
 {
-    public override void UseItem()
+    public override async void UseItem()
     {
         Console.WriteLine(Description);
 
@@ -20,6 +20,7 @@ public class InnerLibraryDoor(string name, string description, string? useDescri
 
         base.UseItem();
         GameManager.player.completedRooms[4] = true;
+        Thread.Sleep(3000);
         RoomManager.EnterRoom("The Hub");
     }
 }

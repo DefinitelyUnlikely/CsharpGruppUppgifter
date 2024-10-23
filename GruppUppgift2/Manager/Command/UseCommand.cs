@@ -6,7 +6,8 @@ public class UseCommand : Command
         : base(
             "use",
             "Use <item> or use <item> with <other item> - use specified item, if possible. "
-        ) { }
+        )
+    { }
 
     public override void Execute(string[] commandArgs)
     {
@@ -25,7 +26,7 @@ public class UseCommand : Command
         }
 
         string itemName = InputUtilities.GetInputAsString(commandArgs);
-        foreach (GameObject item in RoomManager.currentRoom.Items)
+        foreach (GameObject item in Enumerable.Union(RoomManager.currentRoom.Items, GameManager.player.inventory.GetAllItems()))
         {
             if (item.Name.Equals(itemName))
             {
@@ -47,7 +48,7 @@ public class UseCommand : Command
 
     private void UseWith(string[] items)
     {
-        foreach (GameObject item in RoomManager.currentRoom.Items)
+        foreach (GameObject item in Enumerable.Union(RoomManager.currentRoom.Items, GameManager.player.inventory.GetAllItems()))
         {
             if (item.Name.Equals(items[0]))
             {

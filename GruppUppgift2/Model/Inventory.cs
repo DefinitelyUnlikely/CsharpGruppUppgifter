@@ -58,4 +58,9 @@ public class Inventory
             }
         }
     }
+
+    public List<UsableItem> GetAllItems()
+    {
+        return items;
+    }
 }

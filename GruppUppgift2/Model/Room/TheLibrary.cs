@@ -25,12 +25,12 @@ public class TheLibrary
                 "As you turn the key, the clock face turns as well, leaving the hands behind. Now the big hand points on 3, the small hand on 10."
             ),
             new CombinationPadlock(
-                "Library Padlock #1",
+                "Padlock #1",
                 "A padlock that takes a 4 number combination.",
                 "0412"
             ),
             new CombinationPadlock(
-                "Library Padlock #2",
+                "Padlock #2",
                 "A second padlock that takes a 4 number combination.",
                 "1006"
             ),
@@ -43,7 +43,7 @@ public class TheLibrary
             new InnerLibraryDoor(
                 "weird door",
                 "A door that cannot be descriped. Not for a lack of features, but your mind simply can't grasp it.",
-                "As you opened the door, you feel yourself being transported back to the Hub, but with a sense of completion."
+                "As you open the door, you feel yourself being transported back to the Hub, but with a sense of completion."
             )
         };
 
@@ -52,16 +52,19 @@ public class TheLibrary
         {
             new Chapter(
                 "introduction",
-            @"A dusty old Library. Mold covers the ceiling and even thought you cannot find a light source, the room is brigtly lit. 
-            Along one of the walls is a <bookcase>, filled to the brim with books. In a corner you see an old <chair> that looks to be falling apart. 
-            Right infront of you is a door, with two padlocks, marked <Library Padlock #1> and <padlock2>. Awfully convinient. Both take a 4 number combination. Above it is an old <clock>. 
-            The large hand is stuck on 12 and the small hand on 4. You can't help but think 'AM or PM', as if that matters."
+            @"A dusty old Library.
+            Mold covers the ceiling and even thought you cannot find a light source, the room is brigtly lit.
+            Along one of the walls is a <bookcase>, filled to the brim with books.
+            In a corner you see an old <chair> that looks to be falling apart.
+            Right infront of you is a <door>, with two padlocks, marked <Library Padlock #1> and <Library Padlock #2>. Awfully convinient.
+            Both take a 4 number combination. Above it is an old <clock>. The large hand is stuck on 12 and the small hand on 4.
+            You can't help but think 'AM or PM', as if that matters."
             ),
             new Chapter(
                 "The clock is turned",
             @"A dusty old Library. Mold covers the ceiling and even thought you cannot find a light source, the room is brigtly lit. 
             Along one of the walls is a <bookcase>, filled to the brim with books. In a corner you see an old <chair> that looks to be falling apart. 
-            Right infront of you is a door, with two <padlocks>. Both take a 4 number combination. Above it is an old <clock>. 
+            Right infront of you is a <weird door>, with two <padlocks>. Both take a 4 number combination. Above it is an old <clock>. 
             The large hand is now stuck on 6 and the small hand on 10."
             ),
             new Chapter(

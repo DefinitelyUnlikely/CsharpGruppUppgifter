@@ -1,6 +1,3 @@
-// Detta är föremål som skall kunna interageras med på ett sätt som är mer betydelsefullt än
-// enbart skriva ut en beskriving vid inspektion. Objekt ska ta hand om sig själva, så mycket kring
-// denna klass tas mycket möjligt hand om av andra klasser.
 public class UsableItem : GameObject
 {
     protected readonly string? UseDescription;
@@ -15,8 +12,6 @@ public class UsableItem : GameObject
         : base(name, description)
     {
         UseDescription = useDescription;
-        // ?? är en short hand för if (useWith == null) { UsableWith = []; } else { UsableWith = useWith; }
-        // Gör så att vi slipper kolla för null i metoden UseItemWith.
         UsableWith = useWith;
     }
 
@@ -33,6 +28,6 @@ public class UsableItem : GameObject
             return;
         }
 
-        Console.WriteLine($"Using {this} with {itemName}. Implement function.");
+        // Implement your usecase logic in the inherited class.
     }
 }

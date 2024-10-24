@@ -1,9 +1,9 @@
-class Program
+public class Hangman
 {
-    static bool isLampOff = false; 
-    static void Main(string[] args)
+    static bool isLampOff = false;
+    static void StartRoom(string[] args)
     {
-       
+
         Console.WriteLine("You have entered a seemingly normal room. There is a large wall, a window, and a table with a chair in front of the wall. A lamp is hanging from the ceiling.");
         ShowChoices();
 
@@ -43,7 +43,7 @@ class Program
         string lampAction = Console.ReadLine().ToLower();
         if (lampAction == "turn it off")
         {
-            isLampOff = true; 
+            isLampOff = true;
             Console.WriteLine("You turn off the lamp, and suddenly, red squares appear on the wall. There are as many squares as letters in a hidden word.");
         }
         else
@@ -59,7 +59,7 @@ class Program
         if (isLampOff)
         {
             Console.WriteLine("As the lamp is off, the red squares on the wall seem to interact with the module. It looks like you can use the module to guess letters.");
-            StartHangman(); 
+            StartHangman();
         }
         else
         {
@@ -69,18 +69,18 @@ class Program
 
     static void StartHangman()
     {
-       
+
         List<string> words = new List<string> { "computer", "hangman", "apple", "gaming", "sweden", "gothenburg", "easy", "summer", "winter", "school" };
         Random random = new Random();
         string chosenWord = words[random.Next(words.Count)];
         char[] guessedWord = new string('_', chosenWord.Length).ToCharArray();
-        int attempts = 10; 
+        int attempts = 10;
         List<char> wrongGuesses = new List<char>();
 
         Console.WriteLine("You must now guess the hidden word by using the module on the table.");
         Console.WriteLine("There are " + chosenWord.Length + " letters in the word.");
 
-        
+
         while (attempts > 0 && new string(guessedWord) != chosenWord)
         {
             Console.WriteLine("\nWord: " + new string(guessedWord));
@@ -91,7 +91,7 @@ class Program
 
             if (chosenWord.Contains(guess))
             {
-              
+
                 for (int i = 0; i < chosenWord.Length; i++)
                 {
                     if (chosenWord[i] == guess)
@@ -105,7 +105,7 @@ class Program
                 if (!wrongGuesses.Contains(guess))
                 {
                     wrongGuesses.Add(guess);
-                    attempts--; 
+                    attempts--;
                 }
                 else
                 {
@@ -118,7 +118,7 @@ class Program
         {
             Console.WriteLine("\nCongratulations! You guessed the word: " + chosenWord);
             Console.WriteLine("The wall starts to rumble, and slowly, a hidden compartment opens up, revealing a box.");
-            BoxInteraction(); 
+            BoxInteraction();
         }
         else
         {
@@ -128,7 +128,7 @@ class Program
             string tryAgain = Console.ReadLine().ToLower();
             if (tryAgain == "try again")
             {
-                StartHangman(); 
+                StartHangman();
             }
             else
             {
@@ -155,7 +155,7 @@ class Program
                 if (keyAction == "take the key")
                 {
                     Console.WriteLine("You take the key. It feels important, as if it might unlock something significant later.");
-                    ExitRoom(); 
+                    ExitRoom();
                 }
                 else
                 {

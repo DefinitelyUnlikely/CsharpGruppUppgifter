@@ -2,10 +2,8 @@ class Problem5
 {
     public static void Run()
     {
-
         string ChangePlaceDuJag(string input)
         {
-
             string returnString = "";
             foreach (string word in input.Split(null))
             {
@@ -17,6 +15,10 @@ class Problem5
                 {
                     returnString += "jag ";
                 }
+                else if (word.Equals("DU"))
+                {
+                    returnString += "JAG ";
+                }
                 else if (word.Equals("Jag"))
                 {
                     returnString += "Du ";
@@ -24,6 +26,10 @@ class Problem5
                 else if (word.Equals("jag"))
                 {
                     returnString += "du ";
+                }
+                else if (word.Equals("JAG"))
+                {
+                    returnString += "DU ";
                 }
                 else
                 {
@@ -39,5 +45,4 @@ class Problem5
 
         Console.WriteLine(output);
     }
-
 }

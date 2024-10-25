@@ -18,11 +18,16 @@ public class TakeCommand : Command
             {
                 if (item is CollectibleItem mediator)
                 {
+                    if (mediator.isCollected == true)
+                    {
+                        throw new ArgumentException("Item is already in your inventory.");
+                    }
                     GameManager.player.inventory.AddItem(mediator);
                     Console.WriteLine($"Picked up {itemName}");
                     if (mediator.actionOnPickup)
                     {
                         mediator.PickedUp();
+                        mediator.isCollected = true;
                     }
                     // Kanske inte alltid ska ta bort från rummet?
                     RoomManager.currentRoom.Items.Remove(mediator);

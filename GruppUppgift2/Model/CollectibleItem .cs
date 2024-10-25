@@ -4,6 +4,7 @@
 public class CollectibleItem : UsableItem
 {
     public bool actionOnPickup;
+    public bool isCollected = false;
 
     public CollectibleItem(
         string name,
@@ -19,7 +20,11 @@ public class CollectibleItem : UsableItem
 
     public override void UseItem()
     {
-        Console.WriteLine(UseDescription);
+        Console.WriteLine($"Do you want to pick up {Name}?");
+        if (Console.ReadLine().Equals("yes", StringComparison.OrdinalIgnoreCase))
+        {
+            MenuManager.GetCurrentMenu().TryExecuteCommand($"take {Name}");
+        }
     }
 
     public override void UseItemWith(string itemName)

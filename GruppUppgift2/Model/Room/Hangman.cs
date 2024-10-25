@@ -1,17 +1,17 @@
-public class Room
+public class HangmanRoom
 {
-    public string Name { get; private set; }
-    public string Description { get; private set; }
+    // public string Name { get; private set; }
+    // public string Description { get; private set; }
     private bool isLampOff = false;
 
-    public Room(string name, string description)
-    {
-        Name = name;
-        Description = description;
+    // public Room(string name, string description)
+    // {
+    //     Name = name;
+    //     Description = description;
 
-        Console.WriteLine(description);
-        ShowChoices();
-    }
+    //     Console.WriteLine(description);
+    //     ShowChoices();
+    // }
 
     public void StartRoom()
     {
@@ -46,38 +46,62 @@ public class Room
 
     private void LampInteraction()
     {
-        Console.WriteLine("You approach the lamp. It's a simple lamp. You can either 'turn it off' or 'leave it on'. What do you do?");
+        Console.WriteLine(
+            "You approach the lamp. It's a simple lamp. You can either 'turn it off' or 'leave it on'. What do you do?"
+        );
 
         string lampAction = Console.ReadLine().ToLower();
         if (lampAction == "turn it off")
         {
             isLampOff = true;
-            Console.WriteLine("You turn off the lamp, and suddenly, red squares appear on the wall. There are as many squares as letters in a hidden word.");
+            Console.WriteLine(
+                "You turn off the lamp, and suddenly, red squares appear on the wall. There are as many squares as letters in a hidden word."
+            );
         }
         else
         {
-            Console.WriteLine("The lamp remains on, and nothing seems to happen. Maybe turning it off could reveal something...");
+            Console.WriteLine(
+                "The lamp remains on, and nothing seems to happen. Maybe turning it off could reveal something..."
+            );
         }
     }
 
     private void ChairInteraction()
     {
-        Console.WriteLine("You sit down on the chair in front of the table. There is a strange panel on the table, a module with all the letters of the alphabet.");
+        Console.WriteLine(
+            "You sit down on the chair in front of the table. There is a strange panel on the table, a module with all the letters of the alphabet."
+        );
 
         if (isLampOff)
         {
-            Console.WriteLine("As the lamp is off, the red squares on the wall seem to interact with the module. It looks like you can use the module to guess letters.");
+            Console.WriteLine(
+                "As the lamp is off, the red squares on the wall seem to interact with the module. It looks like you can use the module to guess letters."
+            );
             StartHangman();
         }
         else
         {
-            Console.WriteLine("The module looks inactive. Perhaps something will happen if you turn off the lamp.");
+            Console.WriteLine(
+                "The module looks inactive. Perhaps something will happen if you turn off the lamp."
+            );
         }
     }
 
     private void StartHangman()
     {
-        List<string> words = new List<string> { "snacka", "kul", "golf", "birdie", "volvo", "lastbil", "karlstad", "varmland", "jobb", "skola" };
+        List<string> words = new List<string>
+        {
+            "snacka",
+            "kul",
+            "golf",
+            "birdie",
+            "volvo",
+            "lastbil",
+            "karlstad",
+            "varmland",
+            "jobb",
+            "skola",
+        };
         Random random = new Random();
         string chosenWord = words[random.Next(words.Count)];
         char[] guessedWord = new string('_', chosenWord.Length).ToCharArray();
@@ -122,7 +146,9 @@ public class Room
         if (new string(guessedWord) == chosenWord)
         {
             Console.WriteLine("\nCongratulations! You guessed the word: " + chosenWord);
-            Console.WriteLine("The wall starts to rumble, and slowly, a hidden compartment opens up, revealing a box.");
+            Console.WriteLine(
+                "The wall starts to rumble, and slowly, a hidden compartment opens up, revealing a box."
+            );
             BoxInteraction();
         }
         else
@@ -144,22 +170,30 @@ public class Room
 
     private void BoxInteraction()
     {
-        Console.WriteLine("\nYou see a small box inside the hidden compartment. What would you like to do? You can 'approach the box' or 'ignore the box'.");
+        Console.WriteLine(
+            "\nYou see a small box inside the hidden compartment. What would you like to do? You can 'approach the box' or 'ignore the box'."
+        );
         string boxAction = Console.ReadLine().ToLower();
 
         if (boxAction == "approach the box")
         {
-            Console.WriteLine("You approach the box. It looks old, but it's not locked. You can 'open the box' or 'leave it'.");
+            Console.WriteLine(
+                "You approach the box. It looks old, but it's not locked. You can 'open the box' or 'leave it'."
+            );
             string openBoxAction = Console.ReadLine().ToLower();
 
             if (openBoxAction == "open the box")
             {
-                Console.WriteLine("You open the box and find a shiny key inside. Would you like to 'take the key' or 'leave the key'?");
+                Console.WriteLine(
+                    "You open the box and find a shiny key inside. Would you like to 'take the key' or 'leave the key'?"
+                );
                 string keyAction = Console.ReadLine().ToLower();
 
                 if (keyAction == "take the key")
                 {
-                    Console.WriteLine("You take the key. It feels important, as if it might unlock something significant later.");
+                    Console.WriteLine(
+                        "You take the key. It feels important, as if it might unlock something significant later."
+                    );
                     ExitRoom();
                 }
                 else
@@ -183,16 +217,22 @@ public class Room
 
     private void ExitRoom()
     {
-        Console.WriteLine("\nYou have the key in your hand. Would you like to 'leave the room' or 'stay'?");
+        Console.WriteLine(
+            "\nYou have the key in your hand. Would you like to 'leave the room' or 'stay'?"
+        );
         string exitAction = Console.ReadLine().ToLower();
 
         if (exitAction == "leave the room")
         {
-            Console.WriteLine("You leave the room, ready to face whatever challenge comes next with the key in your possession.");
+            Console.WriteLine(
+                "You leave the room, ready to face whatever challenge comes next with the key in your possession."
+            );
         }
         else
         {
-            Console.WriteLine("You decide to stay in the room a little longer, but there seems to be nothing else of interest.");
+            Console.WriteLine(
+                "You decide to stay in the room a little longer, but there seems to be nothing else of interest."
+            );
         }
     }
 }
@@ -201,26 +241,26 @@ public class Room
 
 
 
-//
-public class ShowChoicesCommand : Command
-{
-    public ShowChoicesCommand()
-        : base("choices", "ShowChoices - Display possible actions in the current room.") { }
+// //
+// public class ShowChoicesCommand : Command
+// {
+//     public ShowChoicesCommand()
+//         : base("choices", "ShowChoices - Display possible actions in the current room.") { }
 
-    public override void Execute(string[] commandArgs)
-    {
-        RoomManager.CurrentRoom.ShowChoices();
-    }
-}
+//     public override void Execute(string[] commandArgs)
+//     {
+//         RoomManager.CurrentRoom.ShowChoices();
+//     }
+// }
 
 
-///
-Room myRoom = new Room(
-    "Mystery Room",
-    "You have entered a seemingly normal room. There is a large wall, a window, " +
-    "and a table with a chair in front of the wall. A lamp is hanging from the ceiling. " +
-    "The room feels strange, as if it hides more than meets the eye. You sense that something " +
-    "might reveal itself if you interact with the objects around you."
-);
+// ///
+// Room myRoom = new Room(
+//     "Mystery Room",
+//     "You have entered a seemingly normal room. There is a large wall, a window, " +
+//     "and a table with a chair in front of the wall. A lamp is hanging from the ceiling. " +
+//     "The room feels strange, as if it hides more than meets the eye. You sense that something " +
+//     "might reveal itself if you interact with the objects around you."
+// );
 
-myRoom.StartRoom();
+// myRoom.StartRoom();

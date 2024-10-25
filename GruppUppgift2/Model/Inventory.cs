@@ -1,19 +1,19 @@
 public class Inventory
 {
-    private List<UsableItem> items;
+    private List<CollectibleItem> items;
 
     public Inventory()
     {
-        items = new List<UsableItem>();
+        items = new List<CollectibleItem>();
     }
 
-    public void AddItem(UsableItem item)
+    public void AddItem(CollectibleItem item)
     {
         items.Add(item);
         Console.WriteLine($"{item.Name} has been added to your inventory.");
     }
 
-    public void RemoveItem(UsableItem item)
+    public void RemoveItem(CollectibleItem item)
     {
         if (items.Contains(item))
         {
@@ -26,9 +26,9 @@ public class Inventory
         }
     }
 
-    public UsableItem? GetItemByName(string itemName)
+    public CollectibleItem? GetItemByName(string itemName)
     {
-        foreach (UsableItem item in items)
+        foreach (CollectibleItem item in items)
         {
             if (itemName.Equals(item.Name, StringComparison.OrdinalIgnoreCase))
             {
@@ -38,7 +38,7 @@ public class Inventory
         return null;
     }
 
-    public bool CheckInventory(UsableItem item)
+    public bool CheckInventory(CollectibleItem item)
     {
         return items.Contains(item);
     }
@@ -59,7 +59,7 @@ public class Inventory
         }
     }
 
-    public List<UsableItem> GetAllItems()
+    public List<CollectibleItem> GetAllItems()
     {
         return items;
     }

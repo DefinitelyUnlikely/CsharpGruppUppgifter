@@ -14,7 +14,7 @@ fluorescent lights casting eerie shadows. The air is thick with dust, and the fa
         new()
         {
             new GameObject("door", "A heavy reinforced steel door with a digital <keypad>"),
-            new UsableItem(
+            new CollectibleItem(
                 "screwdriver",
                 "A regular screwdriver. Maybe you can open something with it.",
                 "grate"
@@ -24,6 +24,7 @@ fluorescent lights casting eerie shadows. The air is thick with dust, and the fa
                 @"On the workbench, there are various tools and a partially disassembled robot. Among the tools, you find
     a <screwdriver> and a pair of <pliers>."
             ),
+            new GameObject("Grate", "A grate fastened with screws."),
         };
 
     List<Chapter> chapters =

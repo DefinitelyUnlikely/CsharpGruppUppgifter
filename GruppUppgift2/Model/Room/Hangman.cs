@@ -1,19 +1,18 @@
-public class HangmanRoom
+public class HangmanRoom : Room
 {
-    // public string Name { get; private set; }
-    // public string Description { get; private set; }
     private bool isLampOff = false;
 
-    // public Room(string name, string description)
-    // {
-    //     Name = name;
-    //     Description = description;
+    public HangmanRoom(string name, string description, Story story)
+        : base(name, description, story, null, null) { }
 
-    //     Console.WriteLine(description);
+    // public override void StartRoom()
+    // {
+
+    //     Console.WriteLine(base.Description);
     //     ShowChoices();
     // }
 
-    public void StartRoom()
+    public override void StartRoom()
     {
         string action = Console.ReadLine().ToLower();
         while (action != "leave the room")
@@ -237,30 +236,43 @@ public class HangmanRoom
     }
 }
 
+public class Hangman
+{
+    public string name = "Mystery Room";
 
+    // kort beskrivning
+    public string description = "";
 
+    // meny med dina kommandon från egen klass
+    // public Menu menu = new HangmanMenu();
+    public Menu? menu = null;
 
+    // Detta är föremålen som finns när rummet skapas. Vi lägger till nyckeln till klockan efter man gör useItem på LibraryBook.
+    List<GameObject> items =
+    [
+        new UsableItem(
+            "chair",
+            "A chair. Do you want to <sit> on the chair?",
+            "You sit down on the chair in front of the table. There is a strange panel on the table, a module with all the letters of the alphabet."
+        ),
+    ];
 
-// //
-// public class ShowChoicesCommand : Command
-// {
-//     public ShowChoicesCommand()
-//         : base("choices", "ShowChoices - Display possible actions in the current room.") { }
+    List<Chapter> chapters =
+    [
+        new Chapter(
+            "introduction",
+            "You have entered a seemingly normal room. There is a large wall, a window, "
+                + "and a table with a chair in front of the wall. A lamp is hanging from the ceiling. "
+                + "The room feels strange, as if it hides more than meets the eye. You sense that something "
+                + "might reveal itself if you interact with the objects around you."
+        ),
+    ];
 
-//     public override void Execute(string[] commandArgs)
-//     {
-//         RoomManager.CurrentRoom.ShowChoices();
-//     }
-// }
-
-
-// ///
-// Room myRoom = new Room(
-//     "Mystery Room",
-//     "You have entered a seemingly normal room. There is a large wall, a window, " +
-//     "and a table with a chair in front of the wall. A lamp is hanging from the ceiling. " +
-//     "The room feels strange, as if it hides more than meets the eye. You sense that something " +
-//     "might reveal itself if you interact with the objects around you."
-// );
-
-// myRoom.StartRoom();
+    public Room CreateRoom()
+    {
+        Story story = new Story(chapters);
+        Room room = new HangmanRoom(name, description, story);
+        //Room room = new(name, description, //story, items, menu);
+        return room;
+    }
+}

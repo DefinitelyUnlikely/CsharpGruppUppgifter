@@ -26,8 +26,6 @@ public class UseCommand : Command
 
         string itemName = InputUtilities.GetInputAsString(commandArgs);
         Use(itemName);
-
-        Console.WriteLine("There seems to be no use for that item");
     }
 
     private void Use(string[] items)
@@ -47,14 +45,11 @@ public class UseCommand : Command
                 {
                     Console.WriteLine($"Trying to use {items[0]} with {items[1]}.");
                     mediator.UseItemWith(items[1]);
-                }
-                else if (item is CollectibleItem mediator2) { }
-                else
-                {
-                    throw new ArgumentException($"{item.Name} cannot be used.");
+                    return;
                 }
             }
         }
+        Console.WriteLine("There seems to be no use for that item");
     }
 
     private void Use(string itemName)
@@ -81,5 +76,6 @@ public class UseCommand : Command
                 }
             }
         }
+        Console.WriteLine("There seems to be no use for that item");
     }
 }

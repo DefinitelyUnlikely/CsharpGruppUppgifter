@@ -20,7 +20,7 @@ public class CollectibleItem : UsableItem
 
     public override void UseItem()
     {
-        Console.WriteLine($"Do you want to pick up {Name}?");
+        Console.WriteLine($"Do you want to pick up {Name}? <yes> to pick up.");
         if (Console.ReadLine().Equals("yes", StringComparison.OrdinalIgnoreCase))
         {
             MenuManager.GetCurrentMenu().TryExecuteCommand($"take {Name}");

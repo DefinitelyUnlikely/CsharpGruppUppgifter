@@ -17,12 +17,13 @@ public class UsableItem : GameObject
 
     public virtual void UseItem()
     {
-        Console.WriteLine(UseDescription);
+        if (UseDescription != null)
+            Console.WriteLine(UseDescription);
     }
 
     public virtual void UseItemWith(string itemName)
     {
-        if (!UsableWith.Contains(itemName))
+        if (!UsableWith.Contains(itemName, StringComparison.OrdinalIgnoreCase))
         {
             Console.WriteLine("This seems to do nothing of value");
             return;

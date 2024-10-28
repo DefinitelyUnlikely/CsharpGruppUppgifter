@@ -54,7 +54,7 @@ public class Inventory
             Console.WriteLine("Your inventory contains:");
             foreach (var item in items)
             {
-                Console.WriteLine($"- {item.Name}");
+                Console.WriteLine($"- {item.Name}: {item.Description}");
             }
         }
     }

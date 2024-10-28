@@ -1,6 +1,6 @@
-public class LaboratoryMenu : Menu
+public class WorkshopMenu : Menu
 {
-    public LaboratoryMenu()
+    public WorkshopMenu()
     {
         AddCommand(new UseCommand());
         AddCommand(new TakeCommand());

@@ -23,8 +23,8 @@ public class RoomManager
         Room hub = new HubRoom().CreateRoom();
         rooms.Add(hub.Name, hub);
 
-        Room example = new ExampleRoom().CreateRoom();
-        rooms.Add(example.Name, example);
+        Room workshop = new Workshop().CreateRoom();
+        rooms.Add(workshop.Name, workshop);
 
         Room library = new TheLibrary().CreateRoom();
         rooms.Add(library.Name, library);

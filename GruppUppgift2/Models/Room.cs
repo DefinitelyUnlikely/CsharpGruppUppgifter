@@ -1,7 +1,7 @@
 public class Room : GameObject
 {
     public string[] ConnectedRooms { get; }
-    public List<GameObject> Items { get; }
+    public List<GameObject> Items { get; set; }
     public Story RoomStory { get; }
 
     // Tillagt av Olof, så det är kopplat till story.
@@ -47,5 +47,4 @@ public class Room : GameObject
         Console.WriteLine(RoomStory.GetStoryDescription());
         Console.WriteLine("Type help for a list of commands.");
     }
-
 }

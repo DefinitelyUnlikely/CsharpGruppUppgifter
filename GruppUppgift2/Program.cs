@@ -4,6 +4,7 @@
     {
         // Sätter menyn till MainMenu och kör TryExecuteCommand("help");
         MenuManager.SetMenu(new MainMenu());
+        MenuManager.GetCurrentMenu().TryExecuteCommand("help");
 
         while (true)
         {

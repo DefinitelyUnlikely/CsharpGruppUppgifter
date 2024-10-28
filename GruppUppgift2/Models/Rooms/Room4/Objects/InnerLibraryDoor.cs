@@ -20,7 +20,8 @@ public class InnerLibraryDoor(string name, string description, string? useDescri
 
         base.UseItem();
         GameManager.player.completedRooms[4] = true;
-        Thread.Sleep(3000);
+        Console.WriteLine("press any key to continue back to the hub");
+        Console.ReadKey(true);
         RoomManager.EnterRoom("The Hub");
     }
 }

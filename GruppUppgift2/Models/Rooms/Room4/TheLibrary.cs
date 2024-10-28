@@ -47,20 +47,22 @@ public class TheLibrary
     List<Chapter> chapters = [
             new Chapter(
                 "introduction",
-            @"A dusty old Library.
-            Mold covers the ceiling and even thought you cannot find a light source, the room is brigtly lit.
-            Along one of the walls is a <bookcase>, filled to the brim with books.
-            In a corner you see an old <chair> that looks to be falling apart.
-            Right infront of you is a <door>, with two padlocks, marked <padlock #1> and <padlock #2>. Awfully convinient.
-            Both take a 4 number combination. Above it is an old <clock>. The large hand is stuck on 12 and the small hand on 4.
-            You can't help but think 'AM or PM', as if that matters."
+            "A dusty old Library. "
+            + "Mold covers the ceiling and even thought you cannot find a light source, the room is brigtly lit.\n"
+            + "Along one of the walls is a <bookcase>, filled to the brim with books.\n"
+            + "In a corner you see an old <chair> that looks to be falling apart.\n"
+            + "Right infront of you is a <door>, with two padlocks, marked <padlock #1> and <padlock #2>.\n"
+            + "Both take a 4 number combination. Above it is an old <clock>.\n The large hand is stuck on 12 and the small hand on 4.\n"
+            + "You can't help but think 'AM or PM', as if that matters. "
             ),
             new Chapter(
                 "The clock is turned",
-            @"A dusty old Library. Mold covers the ceiling and even thought you cannot find a light source, the room is brigtly lit. 
-            Along one of the walls is a <bookcase>, filled to the brim with books. In a corner you see an old <chair> that looks to be falling apart. 
-            Right infront of you is a <weird door>, with two padlocks, marked <padlock #1> and <padlock #2>. Both take a 4 number combination. Above it is an old <clock>. 
-            The large hand is now stuck on 6 and the small hand on 10."
+            "A dusty old Library. Mold covers the ceiling and even thought you cannot find a light source, the room is brigtly lit.\n"
+            + "Along one of the walls is a <bookcase>, filled to the brim with books.\n"
+            + "In a corner you see an old <chair> that looks to be falling apart.\n"
+            + "Right infront of you is a <weird door>, with two padlocks, marked <padlock #1> and <padlock #2>.\n"
+            + "Both take a 4 number combination. Above it is an old <clock>.\n"
+            + "The large hand is now stuck on 6 and the small hand on 10."
             ),
             new Chapter(
                 "The padlocks are opened",

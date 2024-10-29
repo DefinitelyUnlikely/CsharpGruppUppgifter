@@ -34,7 +34,7 @@ public class MysteryRoom
     public Room CreateRoom()
     {
         Story story = new(chapters);
-        Room room = new(Name, Description, story, items, Menu);
+        Room room = new(Name, Description, story, ["The Hub"], items, Menu);
         return room;
     }
 }

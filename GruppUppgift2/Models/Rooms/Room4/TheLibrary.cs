@@ -81,7 +81,7 @@ public class TheLibrary
     public Room CreateRoom()
     {
         Story story = new Story(chapters);
-        Room room = new(name, description, story, items, menu);
+        Room room = new(name, description, story, ["The Hub"], items, menu);
         return room;
     }
 }

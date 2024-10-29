@@ -29,8 +29,8 @@ public class RoomManager
         Room library = new TheLibrary().CreateRoom();
         rooms.Add(library.Name, library);
 
-        Room hangman = new MysteryRoom().CreateRoom();
-        rooms.Add(hangman.Name, hangman);
+        Room mystery = new MysteryRoom().CreateRoom();
+        rooms.Add(mystery.Name, mystery);
 
         currentRoom = rooms["The Hub"];
     }

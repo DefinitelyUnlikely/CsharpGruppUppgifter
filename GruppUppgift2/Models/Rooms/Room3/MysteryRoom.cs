@@ -1,24 +1,19 @@
 public class MysteryRoom
 {
-    public string Name { get; } = "Mystery Room";
+    public string Name { get; } = "The Mystery Room";
     public string Description { get; } = "You have entered a seemingly normal room. There is a large wall, a window, and a table with a chair in front of the wall. A lamp is hanging from the ceiling. The room feels strange, as if it hides more than meets the eye.";
     public Menu Menu { get; } = new MysteryRoomMenu();
 
-    private List<GameObject> items;
-
-    public MysteryRoom()
-    {
-        items = new List<GameObject>
-        {
-            new Lamp("lamp", "A simple lamp. You can either 'turn it off' or 'leave it on'."),
-            new Chair("chair", "An old chair in front of the table."),
-            new UsableItem("strange module", "A panel with all letters of the alphabet.")
-        };
-    }
+    public List<GameObject> items =
+    [
+        new Lamp("lamp", "A simple lamp. You can either 'turn it off' or 'leave it on'."),
+        new Chair("chair", "An old chair in front of the table."),
+        new UsableItem("strange module", "A panel with all letters of the alphabet.")
+    ];
 
     // Definiera kapitel
-    private List<Chapter> chapters = new List<Chapter>
-    {
+    private List<Chapter> chapters =
+    [
         new Chapter(
             "introduction",
             """
@@ -34,12 +29,12 @@ public class MysteryRoom
             "hangman_win",
              "Congratulations! You guessed the word and a hidden compartment opened up!"
              ),
-    };
+    ];
 
     public Room CreateRoom()
     {
-        Story story = new Story(chapters);
-        Room room = new Room(Name, Description, story, items, Menu);
+        Story story = new(chapters);
+        Room room = new(Name, Description, story, items, Menu);
         return room;
     }
 }

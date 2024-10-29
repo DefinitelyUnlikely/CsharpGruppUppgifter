@@ -6,7 +6,7 @@ public class MysteryRoom
 
     public List<GameObject> items =
     [
-        new Lamp("lamp", "A simple lamp. You can either 'turn it off' or 'leave it on'."),
+        new Lamp("lamp", "A simple lamp. You can either turn it off and on."),
         new Chair("chair", "An old chair in front of the table."),
         new Module("module", "A panel with all the letters of the alphabet.")
     ];

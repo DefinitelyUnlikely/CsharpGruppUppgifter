@@ -17,7 +17,7 @@ public class HiddenLibraryKey : CollectibleItem
         }
 
         Console.WriteLine(
-            "The Key clicks!\nAs you turn the key, you notice the clocks face rotates."
+            "The Key clicks!\nAs you turn the key, you notice the clock's face rotates."
         );
         RoomManager.currentRoom.RoomStory.NextChapter();
     }

@@ -26,6 +26,8 @@ public class Box : UsableItem
                     Console.WriteLine("You take the key. It feels important, as if it might unlock something significant later.");
                     GameManager.player.completedRooms[3] = true;
                     Console.WriteLine("You decide to leave for the hub");
+                    Console.WriteLine("Press any key to continue");
+                    Console.ReadKey(true);
                     RoomManager.EnterRoom("The Hub");
 
                 }

@@ -1,7 +1,7 @@
 public class Lamp : UsableItem
 {
 
-    public bool isLampoff = false;
+    public bool isLampOff = false;
 
     public Lamp(string name, string description, string? useDescription = null, string useWith = "")
      : base(name, description, useDescription, useWith)
@@ -10,12 +10,11 @@ public class Lamp : UsableItem
 
     public override void UseItem()
     {
-        isLampoff = !isLampoff;
-        if (isLampoff)
+        isLampOff = !isLampOff;
+        if (isLampOff)
         {
             Console.WriteLine("You turned off the lamp. Red squares appear on the wall, hinting at a hidden word.");
             RoomManager.currentRoom.RoomStory.NextChapter();
-            RoomManager.currentRoom.Update();
         }
         else
         {

@@ -1,8 +1,10 @@
 public class Module : UsableItem
 {
     public bool isCompleted = false;
-    bool LampTurnedOn = false;
+    bool LampTurnedOff = false;
     bool isSitting = false;
+
+
 
     public Module(string name, string description, string? useDescription = null, string useWith = "")
      : base(name, description, useDescription, useWith)
@@ -11,31 +13,31 @@ public class Module : UsableItem
 
     public override void UseItem()
     {
-        base.UseItem();
         foreach (GameObject item in RoomManager.currentRoom.Items)
         {
-            if (item is Lamp lamp && lamp.isLampoff)
+            if (item is Lamp lamp)
             {
-                LampTurnedOn = true;
+                LampTurnedOff = lamp.isLampOff;
             }
 
-            if (item is Chair chair && chair.isSatOn)
+            if (item is Chair chair)
             {
-                isSitting = true;
+                isSitting = chair.isSatOn;
             }
         }
 
-        if (isSitting && LampTurnedOn)
+        if (isSitting && LampTurnedOff)
         {
             Hangman.Start();
         }
         else
         {
-            Console.WriteLine("The module looks inactive. Perhaps something will happen if you turn off the lamp.");
+            string chairStr = isSitting ? "" : "The chair is blocking you from accessing the module. Maybe you should sit down?\n";
+            string lampStr = LampTurnedOff ? "" : "The module is turned off. But perhaps something will happen if you turn the lamp off?";
+            Console.WriteLine(chairStr + lampStr);
         }
 
-        LampTurnedOn = false;
-        isSitting = false;
+
     }
 }
 
@@ -89,6 +91,9 @@ public class Hangman()
         {
             Console.WriteLine("\nCongratulations! You guessed the word: " + chosenWord);
             Console.WriteLine("The wall starts to rumble, and slowly, a hidden compartment opens up, revealing a <box>.");
+            RoomManager.currentRoom.Items.Add(new Box("box", "A small box"));
+            RoomManager.currentRoom.RoomStory.NextChapter();
+
         }
         else
         {

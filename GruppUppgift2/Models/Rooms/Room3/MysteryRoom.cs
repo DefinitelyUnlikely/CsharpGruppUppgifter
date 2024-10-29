@@ -8,7 +8,7 @@ public class MysteryRoom
     [
         new Lamp("lamp", "A simple lamp. You can either 'turn it off' or 'leave it on'."),
         new Chair("chair", "An old chair in front of the table."),
-        new UsableItem("strange module", "A panel with all letters of the alphabet.")
+        new Module("module", "A panel with all the letters of the alphabet.")
     ];
 
     // Definiera kapitel
@@ -18,16 +18,31 @@ public class MysteryRoom
             "introduction",
             """
             You are in a mysterious room filled with strange artifacts.
-            A lamp hangs from the ceiling, illuminating a table with a chair. What will you do?
+            A <lamp> hangs from the ceiling, illuminating a table with a <chair>.
+            In front of the chair, on the table, is a <module>, but it seems to lack power.
+            What will you do?
             """
             ),
         new Chapter(
             "lamp_off",
-             "You turned off the lamp. Red squares appear on the wall, hinting at a hidden word."
+            """
+            You are in a mysterious room filled with strange artifacts.
+            A <lamp> hangs from the ceiling, currently not providing any light to the room.
+            The wall is filled with illuminated red squares, which had been invisible while the <lamp> was still shining brightly.
+            The <chair> is barely visible, but the <module> on the table seems to have turned on.
+            What will you do?
+            """
              ),
         new Chapter(
             "hangman_win",
-             "Congratulations! You guessed the word and a hidden compartment opened up!"
+            """
+            You are in a mysterious room filled with strange artifacts.
+            A <lamp> hangs from the ceiling, currently not providing any light to the room.
+            The wall is filled with illuminated red squares, now showing the letters you previously entered.
+            The <chair> is barely visible, but the <module> seems to have turned on.
+            The hidden compartment is lit up from the inside, and a <box> is clearly visible inside of it.
+            What will you do?
+            """
              ),
     ];
 

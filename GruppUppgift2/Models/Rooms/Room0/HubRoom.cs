@@ -31,7 +31,7 @@ public class HubRoom
             ),
         };
 
-    string[] connectedRooms = ["The Library", "The Workshop", "Mystery Room"];
+    string[] connectedRooms = ["Hologram", "The Workshop", "Mystery Room", "The Library"];
 
     public Room CreateRoom()
     {

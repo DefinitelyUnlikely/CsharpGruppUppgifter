@@ -23,14 +23,17 @@ public class RoomManager
         Room hub = new HubRoom().CreateRoom();
         rooms.Add(hub.Name, hub);
 
+        Room hologram = new Hologram().CreateRoom();
+        rooms.Add(hologram.Name, hologram);
+
+        Room hangman = new Hangman().CreateRoom();
+        rooms.Add(hangman.Name, hangman);
+
         Room workshop = new Workshop().CreateRoom();
         rooms.Add(workshop.Name, workshop);
 
         Room library = new TheLibrary().CreateRoom();
         rooms.Add(library.Name, library);
-
-        Room hangman = new Hangman().CreateRoom();
-        rooms.Add(hangman.Name, hangman);
 
         currentRoom = rooms["The Hub"];
     }

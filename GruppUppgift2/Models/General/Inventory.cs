@@ -26,6 +26,17 @@ public class Inventory
         }
     }
 
+    public void RemoveItem(string itemName)
+    {
+        foreach (CollectibleItem item in items)
+        {
+            if (item.Name.Equals(itemName))
+            {
+                items.Remove(item);
+            }
+        }
+    }
+
     public CollectibleItem? GetItemByName(string itemName)
     {
         foreach (CollectibleItem item in items)

@@ -1,6 +1,6 @@
-public class HangmanRoomMenu : Menu
+public class MysteryRoomMenu : Menu
 {
-    public HangmanRoomMenu()
+    public MysteryRoomMenu()
     {
         AddCommand(new UseCommand());
         AddCommand(new TakeCommand());

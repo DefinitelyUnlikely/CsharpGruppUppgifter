@@ -11,5 +11,13 @@ public class Chair : UsableItem
     {
         base.UseItem();
         isSatOn = !isSatOn;
+        if (isSatOn)
+        {
+            Console.WriteLine("You sit down on the chair in front of the table. There is a strange panel with letters on it.");
+        }
+        else
+        {
+            Console.WriteLine("You stand up from the chair");
+        }
     }
 }

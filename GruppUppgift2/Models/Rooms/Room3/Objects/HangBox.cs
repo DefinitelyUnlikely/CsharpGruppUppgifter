@@ -7,8 +7,6 @@ public class Box : UsableItem
 
     public override void UseItem()
     {
-        base.UseItem();
-        GameManager.player.completedRooms[3] = true;
 
         Console.WriteLine("\nYou see a small box inside the hidden compartment. What would you like to do? You can 'approach the box' or 'ignore the box'.");
         string boxAction = Console.ReadLine()!.ToLower();
@@ -26,6 +24,9 @@ public class Box : UsableItem
                 if (keyAction == "take the key")
                 {
                     Console.WriteLine("You take the key. It feels important, as if it might unlock something significant later.");
+                    GameManager.player.completedRooms[3] = true;
+                    Console.WriteLine("You decide to leave for the hub");
+                    RoomManager.EnterRoom("The Hub");
 
                 }
                 else
@@ -43,5 +44,6 @@ public class Box : UsableItem
         {
             Console.WriteLine("You decide to ignore the box.");
         }
+
     }
 }

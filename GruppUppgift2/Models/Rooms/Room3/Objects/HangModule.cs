@@ -1,8 +1,8 @@
 public class Module : UsableItem
 {
     public bool isCompleted = false;
-    bool isTurnedOn = false;
-    bool canUse = false;
+    bool LampTurnedOn = false;
+    bool isSitting = false;
 
     public Module(string name, string description, string? useDescription = null, string useWith = "")
      : base(name, description, useDescription, useWith)
@@ -16,18 +16,26 @@ public class Module : UsableItem
         {
             if (item is Lamp lamp && lamp.isLampoff)
             {
-                isTurnedOn = true;
+                LampTurnedOn = true;
             }
 
             if (item is Chair chair && chair.isSatOn)
             {
-                canUse = true;
+                isSitting = true;
             }
         }
 
-        Hangman.Start();
-        isTurnedOn = false;
-        canUse = false;
+        if (isSitting && LampTurnedOn)
+        {
+            Hangman.Start();
+        }
+        else
+        {
+            Console.WriteLine("The module looks inactive. Perhaps something will happen if you turn off the lamp.");
+        }
+
+        LampTurnedOn = false;
+        isSitting = false;
     }
 }
 

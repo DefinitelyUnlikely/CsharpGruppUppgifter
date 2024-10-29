@@ -8,14 +8,13 @@ public class GameManager
         gameRunning = true;
 
         // Ifall vi vill använda spelarens namn till något.
-        Console.WriteLine("Enter your name: ");
-        player = new Player(Console.ReadLine());
+        // Console.WriteLine("Enter your name: ");
+        // player = new Player(Console.ReadLine());
 
-        // MenuManager.SetMenu(new LibraryMenu()); // I framtiden, menu för the hub.
-        // Menu currentMenu = MenuManager.GetCurrentMenu();
+        player = new Player("Namn");
 
         RoomManager.CreateRooms();
-        RoomManager.EnterRoom("The Hub"); // I framtiden, the hub.
+        RoomManager.EnterRoom("The Hub");
 
         gameRunning = true;
 

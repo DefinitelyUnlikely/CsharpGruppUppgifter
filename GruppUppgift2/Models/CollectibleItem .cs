@@ -20,22 +20,11 @@ public class CollectibleItem : UsableItem
 
     public override void UseItem()
     {
-        Console.WriteLine($"Do you want to pick up {Name}? <yes> to pick up.");
-        if (Console.ReadLine().Equals("yes", StringComparison.OrdinalIgnoreCase))
+        base.UseItem();
+        if (!isCollected)
         {
-            MenuManager.GetCurrentMenu().TryExecuteCommand($"take {Name}");
+            Console.WriteLine($"Maybe you want to <take> {this.Name}.");
         }
-    }
-
-    public override void UseItemWith(string itemName)
-    {
-        if (!UsableWith.Contains(itemName))
-        {
-            Console.WriteLine("This seems to do nothing of value");
-            return;
-        }
-
-        Console.WriteLine($"Using {this} with {itemName}. Implement function.");
     }
 
     public void PickedUp()

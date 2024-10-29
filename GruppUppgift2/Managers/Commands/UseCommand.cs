@@ -15,11 +15,19 @@ public class UseCommand : Command
             throw new ArgumentException("Use what?");
         }
 
+        string divider = "";
         if (commandArgs.Contains("with"))
+            divider = "with";
+        else if (commandArgs.Contains("on"))
+            divider = "on";
+
+        if (!string.IsNullOrEmpty(divider))
         {
-            string[] items = InputUtilities.GetInputWithoutDivider(commandArgs, "with") ?? [];
+            string[] items = InputUtilities.GetInputWithoutDivider(commandArgs, divider) ?? [];
             if (items.Length != 2)
+            {
                 throw new ArgumentException("Invalid input. <use item1 with item2>");
+            }
             Use(items);
             return;
         }
@@ -39,7 +47,7 @@ public class UseCommand : Command
 
         foreach (GameObject item in RoomManager.currentRoom.Items)
         {
-            if (item.Name.Equals(items[0]))
+            if (item.Name.Equals(items[0], StringComparison.OrdinalIgnoreCase))
             {
                 if (item is UsableItem mediator)
                 {
@@ -62,7 +70,7 @@ public class UseCommand : Command
         }
         foreach (GameObject item in RoomManager.currentRoom.Items)
         {
-            if (item.Name.Equals(itemName))
+            if (item.Name.Equals(itemName, StringComparison.OrdinalIgnoreCase))
             {
                 if (item is UsableItem mediator)
                 {

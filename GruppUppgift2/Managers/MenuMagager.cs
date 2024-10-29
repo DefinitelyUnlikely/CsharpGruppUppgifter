@@ -11,6 +11,8 @@ public static class MenuManager
     public static void SetMenu(Menu menu)
     {
         Menu = menu;
-        menu.TryExecuteCommand("help");
+
+        // Blir så mycket text med helpkommandot. Tar bort om det inte behövs.
+        //menu.TryExecuteCommand("help");
     }
 }

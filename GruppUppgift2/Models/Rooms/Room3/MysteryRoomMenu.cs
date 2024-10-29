@@ -1,10 +1,9 @@
-public class LaboratoryMenu : Menu
+public class HangmanRoomMenu : Menu
 {
-    public LaboratoryMenu()
+    public HangmanRoomMenu()
     {
         AddCommand(new UseCommand());
         AddCommand(new TakeCommand());
-        AddCommand(new InventoryCommand());
         AddCommand(new InspectCommand());
         AddCommand(new StoryCommand());
         AddCommand(new LeaveCommand());

@@ -19,7 +19,7 @@ public class TheLibrary
         new BrokenClock(
             "clock",
             "A broken clock. You notice there is a keyhole in the middle of it.",
-            "As you turn the key, the clock face turns as well, leaving the hands behind. Now the big hand points on 3, the small hand on 10."
+            "As you turn the key, the clock's face turn as well, leaving the hands behind. Now the big hand points on 6, the small hand on 10."
         ),
         new CombinationPadlock(
             "padlock #1",
@@ -34,11 +34,11 @@ public class TheLibrary
         new LibraryBook(
             "1984",
             "A book with no sign of use.",
-            "As you pick up the book, you notice it is lighter than it probably should be. You open it up, revealing a hidden key."
+            "As you pick up the book, you notice it is lighter than it probably should be. You open it up, revealing a hidden <key>."
         ),
         new InnerLibraryDoor(
             "weird door",
-            "A door that cannot be descriped. Not for a lack of features, but your mind simply can't grasp it.",
+            "A door that cannot be described. Not for a lack of features, but your mind simply can't grasp it.",
             "As you open the door, you feel yourself being transported back to the Hub, but with a sense of completion."
         ),
     ];

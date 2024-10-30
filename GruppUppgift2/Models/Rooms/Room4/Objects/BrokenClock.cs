@@ -6,6 +6,5 @@ public class BrokenClock : UsableItem
     public override void UseItem()
     {
         Console.WriteLine(Description);
-        // story.NextChapter();
     }
 }

@@ -1,6 +1,3 @@
-// Detta är föremål som skall kunna interageras med på ett sätt som är mer betydelsefullt än
-// enbart skriva ut en beskriving vid inspektion. Objekt ska ta hand om sig själva, så mycket kring
-// denna klass tas mycket möjligt hand om av andra klasser.
 public class CollectibleItem : UsableItem
 {
     public bool actionOnPickup;

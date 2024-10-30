@@ -18,9 +18,6 @@ public class GameManager
 
         gameRunning = true;
 
-        // Deprecated methods. Called from Display() on EnterRoom and from Menu.SetMenu.
-        //RoomManager.currentRoom.PrintStory();
-        //currentMenu.TryExecuteCommand("help");
         while (gameRunning)
         {
             // Console.WriteLine("Type 'help' for a list of commands");

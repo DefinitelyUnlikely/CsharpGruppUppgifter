@@ -1,6 +1,3 @@
-// Detta har nu utvecklats till en klass som egentligen bara håller information som behövs för att skapa mina rum.
-// Det gör det lite smidigare att skapa Room objekt sedan.
-
 public class TheLibrary
 {
     public string name = "The Library";
@@ -8,7 +5,7 @@ public class TheLibrary
         "An old study, looking very much like any other library, albeit older and dustier.";
     public Menu menu = new LibraryMenu();
 
-    // Detta är föremålen som finns när rummet skapas. Vi lägger till nyckeln till klockan efter man gör useItem på LibraryBook.
+    // Detta är föremålen som finns när rummet skapas. 
     List<GameObject> items =
     [
         new GameObject(

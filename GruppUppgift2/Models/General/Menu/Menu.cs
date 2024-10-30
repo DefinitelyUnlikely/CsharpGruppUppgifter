@@ -2,8 +2,6 @@ public abstract class Menu
 {
     private List<Command> commands = [];
 
-    // Om vi kör att alla menyer kan välja help och quit
-    // Så tänker jag att de läggs till i vår constructor, så alla menyer har dem utan att behöva tänka på det.
     public Menu()
     {
         AddCommand(new QuitCommand());

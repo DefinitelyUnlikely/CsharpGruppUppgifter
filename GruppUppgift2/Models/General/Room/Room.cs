@@ -4,7 +4,6 @@ public class Room : GameObject
     public List<GameObject> Items { get; set; }
     public Story RoomStory { get; }
 
-    // Tillagt av Olof, så det är kopplat till story.
     public Menu? roomMenu { get; }
 
     public Room(

@@ -25,10 +25,10 @@ public class RoomManager
 
         Room hologram = new Hologram().CreateRoom();
         rooms.Add(hologram.Name, hologram);
-      
+
         Room workshop = new Workshop().CreateRoom();
         rooms.Add(workshop.Name, workshop);
-      
+
         Room mystery = new MysteryRoom().CreateRoom();
         rooms.Add(mystery.Name, mystery);
 

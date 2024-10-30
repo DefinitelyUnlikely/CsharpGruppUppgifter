@@ -9,7 +9,10 @@ public class InnerLibraryDoor(string name, string description, string? useDescri
         foreach (GameObject item in RoomManager.currentRoom.Items)
         {
             if (item is CombinationPadlock padlock && padlock.Unlocked)
+            {
                 locksOpen++;
+            }
+
         }
 
         if (locksOpen != 2)

@@ -3,10 +3,8 @@ using System.Linq;
 public class UseCommand : Command
 {
     public UseCommand()
-        : base(
-            "use",
-            "Use <item> or use <item> with <other item> - use specified item, if possible. "
-        ) { }
+    : base("use", "Use <item> or use <item> with <other item> - use specified item, if possible. ") { }
+
 
     public override void Execute(string[] commandArgs)
     {

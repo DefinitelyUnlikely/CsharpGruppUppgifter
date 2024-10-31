@@ -10,7 +10,7 @@ public class InspectCommand : Command
         {
             if (item.Name.Equals(itemName, StringComparison.OrdinalIgnoreCase))
             {
-                Console.WriteLine(item.Description);
+                item.Display();
                 return;
             }
         }

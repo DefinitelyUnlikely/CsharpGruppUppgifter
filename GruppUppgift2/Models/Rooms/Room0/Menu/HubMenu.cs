@@ -6,5 +6,7 @@ public class HubMenu : Menu
         AddCommand(new InspectCommand());
         AddCommand(new StoryCommand());
         AddCommand(new EnterCommand());
+        AddCommand(new HintCommand());
+        AddCommand(new CompleteCommand());
     }
 }

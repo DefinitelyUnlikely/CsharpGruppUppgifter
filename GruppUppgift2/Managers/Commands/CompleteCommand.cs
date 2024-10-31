@@ -18,5 +18,7 @@ public class CompleteCommand : Command
 
         GameManager.player.completedRooms[i] = true;
         Console.WriteLine($"Marked room {i} as completed");
+        RoomManager.rooms["The Hub"].RoomStory.NextChapter();
+
     }
 }

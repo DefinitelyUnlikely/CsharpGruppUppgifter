@@ -8,12 +8,12 @@ public class Spear : CollectibleItem
     )
         : base(name, description, useDescription = "A deadly spear that you can use to hunt for food with.", useWith = "fish") { }
 
-    public override void UseItem()
+    /*public override void UseItem()
     {
         base.UseItem();
 
         Console.WriteLine("");
-    }
+    }*/
 
     public override void UseItemWith(string itemName)
     {

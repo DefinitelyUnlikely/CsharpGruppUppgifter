@@ -13,7 +13,12 @@ public class Mountainwall : UsableItem
         base.UseItem();
 
         Console.WriteLine(
-            "You have now twisted the <vines> into a strong and stable rope, which you then used to climb down the <mountainwall> with and over to the other side. It was a dangerous experience, but it resulted in bringing the player safely on to the other side. Now it's time (once again) to continue the journey to the manned lighthouse."
+            """
+            You have now twisted the <vines> into a strong and stable rope, 
+            which you then used to climb down the <mountainwall> with and over to the other side. 
+            It was a dangerous experience, but it resulted in bringing the player safely on to the other side. 
+            Now it's time (once again) to continue the journey to the manned lighthouse.
+            """
         );
         RoomManager.currentRoom.RoomStory.NextChapter();
     }

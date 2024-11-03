@@ -13,8 +13,8 @@ public class HintCommand : Command
 
             Objective - The objective of the game is to complete all 4 rooms.
             After completing a room, one of the 4 lights on the <control panel>
-            will turn green. When all 4 lights are green, you may use the exit door
-            to complete the game. 
+            will turn green. When all 4 lights are green, you may press the button
+            on the control panel and then exit through the exit door, to win the game.
 
             Items in the game world - In the description of the game world,
             some words will have angle brackets <> around them. This indicates that
@@ -40,5 +40,9 @@ public class HintCommand : Command
             Good luck and have fun!
         """;
         Console.WriteLine(hintText);
+        Console.WriteLine("Press any key to show the room's story.");
+        Console.ReadKey(true);
+        RoomManager.currentRoom.Update();
+
     }
 }

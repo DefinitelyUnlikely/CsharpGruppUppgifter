@@ -33,6 +33,7 @@ public class Inventory
             if (item.Name.Equals(itemName))
             {
                 items.Remove(item);
+                return;
             }
         }
     }

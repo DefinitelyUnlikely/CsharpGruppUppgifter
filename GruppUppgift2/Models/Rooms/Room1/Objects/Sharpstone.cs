@@ -8,12 +8,12 @@ public class Sharpstone : CollectibleItem
     )
         : base(name, description, useDescription = "An arrow shaped sharpstone, suitable for creating tools. ", useWith = "stick") { }
 
-    public override void UseItem()
+    /*public override void UseItem()
     {
         base.UseItem();
 
         Console.WriteLine("");
-    }
+    }*/
 
     public override void UseItemWith(string itemName)
     {

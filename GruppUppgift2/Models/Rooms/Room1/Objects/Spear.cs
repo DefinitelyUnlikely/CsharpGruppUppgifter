@@ -1,7 +1,12 @@
 public class Spear : CollectibleItem
 {
-    public Spear(string name, string description, string useWith, string? useDescription = null)
-        : base(name, description, useDescription, useWith) { }
+    public Spear(
+        string name, 
+        string description, 
+        string useWith, 
+        string? useDescription = null
+    )
+        : base(name, description, useDescription = "A deadly spear that you can use to hunt for food with.", useWith = "fish") { }
 
     public override void UseItem()
     {
@@ -23,7 +28,9 @@ public class Spear : CollectibleItem
             return;
         }
 
-        Console.WriteLine("You caught a fish.");
+        Console.WriteLine(
+            "You caught a fish."
+        );
         RoomManager.currentRoom.RoomStory.NextChapter();
     }
 }

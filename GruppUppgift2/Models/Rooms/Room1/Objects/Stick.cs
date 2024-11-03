@@ -34,7 +34,7 @@ public class Stick : CollectibleItem
 
         CollectibleItem spear = new Spear("spear", "the spear is used to hunt for food", "fish");
         GameManager.player.inventory.RemoveItem("stick");
-        GameManager.player.inventory.RemoveItem("stone");
+        GameManager.player.inventory.RemoveItem("sharpstone");
         GameManager.player.inventory.AddItem(spear);
         spear.isCollected = true;
     }

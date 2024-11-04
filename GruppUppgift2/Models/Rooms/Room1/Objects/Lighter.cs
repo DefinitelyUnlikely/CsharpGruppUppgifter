@@ -31,15 +31,11 @@ public class Lighter : UsableItem
             if (item is Cave cave)
             {
                 insideCave = cave.isInCave;
-                Console.Write("insideCave is ");
-                Console.WriteLine(insideCave);
             }
 
             if (item is Firewood wood)
             {
                 firewoodCollected = wood.isCollected;
-                Console.Write("firewoodCollected is ");
-                Console.WriteLine(firewoodCollected);
             }
         }
 

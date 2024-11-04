@@ -46,29 +46,20 @@ public class Hologram
             new Chapter(
                 "The RainForest",
                 """
-                The player has now started their journey towards the manned lighthouse 
-                and first needs to pass through the dense rainforest to get there.
-                On the way, the player needs to look for fuel such as <firewood> or similar 
-                for a bonfire that can heat them during the night,
-                so that the player can rest before the they continue 
-                their long journey towards the manned lighthouse again.
-                The player now needs to travel through the rainforest, 
-                which is rich in different species of animals and insects,
-                with high humidity and animals lurking where you can't see them, 
-                behind fallen trees, branches and hanging vines,
-                as well as a lot of details of varying types and impressions. 
-                Water flows from cracks in the mountain walls, forming waterfalls in various places, 
-                with clean drinking water that, among other things, collects in the leaves of the trees,
-                which have formed into bowls that you can drink from. On the paths there is a lot you can trip over, 
-                such as crooked roots from the trees, boulders and the like. All around you can see exotic birds 
-                and monkeys in the branches of the trees, snakes and colorful frogs in the surroundings.
-                At the end of the path the player has followed, the player comes to a mountain wall with a cave in front of it.
-                At the opening there are branches, stones, vines and fallen palm tree leaves lying on the ground. 
-                The player now needs to make a decision.
-                Should the player climb a tree to sleep among the branches, 
-                or enter the dark cave, and light a fire at the opening of the cave,
-                so that one can sleep in the cave and gain warmth and protection from predators. 
-                The player reaches into his pocket and finds a lighter among his things. 
+                The player has now started their journey towards the manned lighthouse and first needs to pass through the dense rainforest to get there.
+                On the way, the player needs to look for fuel such as <firewood> or similar for a bonfire that can heat them during the night,
+                so that the player can rest before the they continue their long journey towards the manned lighthouse again.
+                The player now needs to travel through the rainforest, which is rich in different species of animals and insects,
+                with high humidity and animals lurking where you can't see them, behind fallen trees, branches and hanging vines,
+                as well as a lot of details of varying types and impressions. Water flows from cracks in the mountain walls, 
+                forming waterfalls in various places, with clean drinking water that, among other things, collects in the leaves of the trees,
+                which have formed into bowls that you can drink from. On the paths there is a lot you can trip over, such as crooked roots from the trees, 
+                boulders and the like. All around you can see exotic birds and monkeys in the branches of the trees, 
+                snakes and colorful frogs in the surroundings.At the end of the path the player has followed, the player comes to a mountain wall 
+                with a cave in front of it. At the opening there are branches, stones, vines and fallen palm tree leaves lying on the ground. 
+                The player now needs to make a decision. Should the player climb a tree to sleep among the branches, 
+                or enter the dark cave, and light a fire at the opening of the cave, so that one can sleep in the cave 
+                and gain warmth and protection from predators. The player reaches into his pocket and finds a <lighter> among his things. 
                 The player decides to sleep in the <cave> and now needs to collect <firewood> for his bonfire. 
                 """,
                 new()
@@ -76,7 +67,6 @@ public class Hologram
                     new Freshwater("freshwater", "A fresh water source, perfect for drinking. "),
                     new Lighter("lighter", "A lighter that you can use to light a fire. ", "firewood"),
                     new Firewood("firewood", "Firewood that you can use to light a fire."),
-                    new Bonfire("bonfire", "A <bonfire> that provides warmth and protection from predators. "),
                     new Cave("cave", "A dark cave that you can sleep in and get shelter from storms."),
                 }
             ),
@@ -84,8 +74,7 @@ public class Hologram
             new Chapter(
                 "The Mountains",
                 """
-                The player now continues the journey towards the manned lighthouse, 
-                but first needs to cross the river between the mountain walls to get there.
+                The player now continues the journey towards the manned lighthouse, but first needs to cross the river between the mountain walls to get there.
                 The mountains are rocky in nature, with ledges to rest on and can be used as roads in mountainous terrain.
                 There are many sharp surfaces and boulders to use in creative ways, but also to injure yourself if you fall.
                 The mountain walls have many hollows and deep caves to seek shelter in, but also parts that are dangerous
@@ -127,7 +116,6 @@ public class Hologram
                 {
                     new Oars("oars", "Oars used to row the boat. ", "boat"),
                     new Boat("boat", "A worn boat used to cross the sea. "),
-                    new Boatnoars("boatnoars", "A worn boat with oars used to row the boat across the sea. ", "sea"),
                 }
             ),
             // Optional Chapters after the main one.

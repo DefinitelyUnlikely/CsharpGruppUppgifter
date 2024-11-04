@@ -10,7 +10,7 @@ public class HiddenLibraryKey : CollectibleItem
 
     public override void UseItemWith(string itemName)
     {
-        if (!UsableWith.Contains(itemName))
+        if (!UsableWith.Contains(itemName, StringComparison.OrdinalIgnoreCase))
         {
             Console.WriteLine("Cannot use this key with that object.");
             return;

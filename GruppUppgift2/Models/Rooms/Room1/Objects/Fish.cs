@@ -1,5 +1,7 @@
 public class Fish : UsableItem
 {
+    public bool caught = false;
+
     public Fish(
         string name,
         string description,
@@ -10,29 +12,16 @@ public class Fish : UsableItem
 
     public override void UseItem()
     {
-        base.UseItem();
+        if (!caught)
+        {
+            Console.WriteLine("Need to catch the fish first");
+            return;
+        }
 
-        Console.WriteLine(
-            "You have eaten this <fish> that you caught from the lagoon with the <spear> \nand now you can continue your journey. "
-        );
+        Console.WriteLine("You have eaten this <fish> that you caught from the lagoon with the <spear> \nand now you can continue your journey. ");
+        Console.WriteLine("press any key to continue the journey");
+        Console.ReadKey(true);
         RoomManager.currentRoom.RoomStory.NextChapter();
     }
 
-    /*public override void UseItemWith(string itemName)
-    {
-        if (!this.isCollected)
-        {
-            Console.WriteLine("You should <take> this to be able to use it.");
-            return;
-        }
-        if (!UsableWith.Contains(itemName))
-        {
-            Console.WriteLine($"Cannot use {this.Name} with {itemName}.");
-            return;
-        }
-
-        Console.WriteLine(
-            ""
-        );
-    }*/
 }

@@ -1,5 +1,7 @@
 public class Boat : CollectibleItem
 {
+    public bool oarsInBoat = false;
+
     public Boat(
         string name,
         string description,
@@ -8,29 +10,23 @@ public class Boat : CollectibleItem
     )
         : base(name, description, useDescription = "A worn boat used to cross the sea. ", useWith = "oars") { }
 
-    /*public override void UseItem()
+    public override void UseItem()
     {
-        base.UseItem();
-
-        Console.WriteLine("");
-    }*/
-
-    public override void UseItemWith(string itemName)
-    {
-        if (!this.isCollected)
+        if (!oarsInBoat)
         {
-            Console.WriteLine("You should <take> this to be able to use it.");
+            Console.WriteLine("You probably need something to row this with. Perhaps a pair of <oars>?");
             return;
         }
-        if (!UsableWith.Contains(itemName))
-        {
-            Console.WriteLine($"Cannot use {this.Name} with {itemName}.");
-            return;
-        }
-
         Console.WriteLine(
-            "You have prepared the <boat> and <oars> so that you can begin your journey across the <sea> to the lighthouse. "
+        """
+        It was a long and tiring journey manually rowing the <boat> with the <oars> against the strong currents of the water, 
+        but you have now crossed the <sea> and are finally at the mainland where the lighthouse stands and can now make it to 
+        the lighthouse's outer door. 
+        """
         );
+        Console.WriteLine("press any key to continue the journey");
+        Console.ReadKey(true);
         RoomManager.currentRoom.RoomStory.NextChapter();
     }
+
 }
